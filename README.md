@@ -20,9 +20,13 @@
 
 </div>
 
+</br>
+
 <div style="width: 100%;">
   <img src="docs/animation.gif" style="width: 100%;" alt="Addon preview animation">
 </div>
+
+</br>
 
 This Addon lets you switch the `data-theme` attribute in your Storybook, by
 selecting a defined theme from a toolbar dropdown and adding the selected theme
