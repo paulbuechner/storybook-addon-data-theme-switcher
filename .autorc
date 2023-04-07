@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "npm",
+    ["conventional-commits", { "preset": "angular" }],
+    "first-time-contributor"
+  ],
+  "onlyPublishWithReleaseLabel": true,
+  "baseBranch": "main",
+  "prereleaseBranches": [
+    "next"
+  ]
+}

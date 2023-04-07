@@ -63,6 +63,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@auto-it/conventional-commits": "^10.44.0",
+    "@auto-it/first-time-contributor": "^10.44.0",
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
     "@storybook/addon-essentials": "^7.0.2",
@@ -128,16 +130,6 @@
   "packageManager": "pnpm@8.0.0",
   "publishConfig": {
     "access": "public"
-  },
-  "auto": {
-    "plugins": [
-      "npm"
-    ],
-    "onlyPublishWithReleaseLabel": true,
-    "baseBranch": "main",
-    "prereleaseBranches": [
-      "next"
-    ]
   },
   "storybook": {
     "displayName": "Storybook Addon Data Theme Switcher",
