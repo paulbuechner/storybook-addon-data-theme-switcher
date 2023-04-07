@@ -4,7 +4,7 @@
     ["conventional-commits", { "preset": "angular" }],
     "first-time-contributor"
   ],
-  "onlyPublishWithReleaseLabel": true,
+  "onlyPublishWithReleaseLabel": false,
   "baseBranch": "main",
   "prereleaseBranches": [
     "next"
