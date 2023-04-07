@@ -21,7 +21,7 @@
 </div>
 
 <div style="width: 100%;">
-  <img src="docs/animation.svg" style="width: 100%;" alt="Addon preview animation">
+  <img src="docs/animation.gif" style="width: 100%;" alt="Addon preview animation">
 </div>
 
 This Addon lets you switch the `data-theme` attribute in your Storybook, by
