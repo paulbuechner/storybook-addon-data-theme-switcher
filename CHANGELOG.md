@@ -1,3 +1,15 @@
+# v0.1.5 (Fri Apr 07 2023)
+
+#### 🐛 Bug Fix
+
+- docs: update README ([@paulbuechner](https://github.com/paulbuechner))
+
+#### Authors: 1
+
+- Paul Büchner ([@paulbuechner](https://github.com/paulbuechner))
+
+---
+
 # v0.1.4 (Fri Apr 07 2023)
 
 #### 🐛 Bug Fix
