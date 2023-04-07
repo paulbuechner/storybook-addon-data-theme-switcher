@@ -1,3 +1,15 @@
+# v0.1.3 (Fri Apr 07 2023)
+
+#### 🐛 Bug Fix
+
+- chore(docs): update README ([@paulbuechner](https://github.com/paulbuechner))
+
+#### Authors: 1
+
+- Paul Büchner ([@paulbuechner](https://github.com/paulbuechner))
+
+---
+
 # v0.1.2 (Fri Apr 07 2023)
 
 :tada: This release contains work from a new contributor! :tada:
