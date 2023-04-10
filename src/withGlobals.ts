@@ -12,13 +12,7 @@ export const withGlobals = (StoryFn: StoryFunction<Renderer>) => {
   const dataTheme = globals[PARAM_KEY];
 
   useEffect(() => {
-    if (!dataTheme) {
-      // On initial render, try to get the data-theme from local storage
-      const savedTheme = window.localStorage.getItem("data-theme");
-      if (savedTheme) {
-        updateGlobals({ [PARAM_KEY]: savedTheme });
-      }
-    } else if (dataTheme === "none") {
+    if (dataTheme === "none") {
       document.documentElement.removeAttribute("data-theme");
       window.localStorage.removeItem("data-theme");
     } else {
