@@ -1,3 +1,15 @@
+# v0.1.6 (Mon Apr 10 2023)
+
+#### 🐛 Bug Fix
+
+- chore: minor improvements ([@paulbuechner](https://github.com/paulbuechner))
+
+#### Authors: 1
+
+- Paul Büchner ([@paulbuechner](https://github.com/paulbuechner))
+
+---
+
 # v0.1.5 (Fri Apr 07 2023)
 
 #### 🐛 Bug Fix
