@@ -73,7 +73,7 @@
     "@storybook/addon-links": "^7.0.2",
     "@storybook/react": "^7.0.2",
     "@storybook/react-vite": "^7.0.2",
-    "@storybook/testing-library": "^0.0.14-next.2",
+    "@storybook/testing-library": "^0.1.0",
     "@types/eslint": "^8.37.0",
     "@types/node": "^18.15.0",
     "@types/prettier": "^2.7.2",
