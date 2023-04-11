@@ -1,7 +1,7 @@
 {
   "name": "storybook-addon-data-theme-switcher",
   "version": "0.1.6",
-  "description": "A Storybook addon to switch data-theme attributes on the html element",
+  "description": "A Storybook addon to switch the data-theme attribute on the html element",
   "keywords": [
     "storybook-addons",
     "storybook-addon-theme",
@@ -57,14 +57,15 @@
     "clean": "rimraf ./dist",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "release": "pnpm build && auto shipit",
+    "release": "changeset publish",
     "start": "concurrently \"pnpm build:watch\" \"pnpm storybook --quiet\"",
     "storybook": "storybook dev -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "changeset version"
   },
   "devDependencies": {
-    "@auto-it/conventional-commits": "^10.44.0",
-    "@auto-it/first-time-contributor": "^10.44.0",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
     "@storybook/addon-essentials": "^7.0.2",
@@ -80,7 +81,6 @@
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^3.1.0",
-    "auto": "^10.44.0",
     "autoprefixer": "^10.4.14",
     "concurrently": "^6.5.1",
     "eslint": "^8.37.0",
@@ -128,6 +128,9 @@
     }
   },
   "packageManager": "pnpm@8.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
