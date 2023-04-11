@@ -82,7 +82,7 @@
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
-    "concurrently": "^6.5.1",
+    "concurrently": "^8.0.0",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
