@@ -28,6 +28,14 @@ jobs:
           version: 8
           run_install: false
 
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: pnpm-deps-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-deps-${{ hashFiles('pnpm-lock.yaml') }}
+
       - name: Install dependencies
         run: pnpm install
 
