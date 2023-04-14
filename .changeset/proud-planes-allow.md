@@ -2,6 +2,6 @@
 "storybook-addon-data-theme-switcher": patch
 ---
 
-fix: package exports
+Fixed an issue where the addons `package` exports were not configured correctly
 
-chore: remove unused peers
+Removed unused peer dependencies

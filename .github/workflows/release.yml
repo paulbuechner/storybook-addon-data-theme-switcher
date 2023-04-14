@@ -4,10 +4,10 @@ on:
   push:
     paths:
       - '.changeset/**'
-      - 'package.json'
       - 'src/**'
     branches:
       - main
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -53,8 +53,14 @@ jobs:
         with:
           publish: pnpm release
           commit: 'ci(changesets): version packages'
-          setupGitUser: false
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update changelog
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          pnpm changelog:latest
+          pnpm changelog:format
+          pnpm changelog:commit
