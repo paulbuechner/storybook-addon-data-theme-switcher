@@ -11,11 +11,6 @@ module.exports = {
     "plugin:react/jsx-runtime",
   ],
   root: true,
-  ignorePatterns: [
-    "**/.eslintrc.js",
-    "**/prettier.config.js",
-    "**/tailwind.config.js",
-  ],
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
