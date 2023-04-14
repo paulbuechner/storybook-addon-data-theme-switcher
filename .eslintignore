@@ -1,0 +1,13 @@
+# Build output
+node_modules
+dist
+
+# Config files
+.eslintrc.cjs
+prettier.config.cjs
+postcss.config.js
+tailwind.config.js
+
+# Storybook addon related files
+manager.js
+preview.js
