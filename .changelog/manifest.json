@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 12,
+    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/12",
+    "body": "---\ntitle: Version 0.1.7\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 0.1.7. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/12\nreleaseDate: April 15, 2023\nversion: 0.1.7\n---\n\n\n\n## storybook-addon-data-theme-switcher@0.1.7\n\n### Patch Changes\n\n-   [#11](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/11) [`1ef4972`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/1ef4972ffbef9c375b356024c1e7957b2d4c8646) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Fixed an issue where the addons `package` exports were not configured correctly\n\n    Removed unused peer dependencies\n",
+    "date": "April 15, 2023",
+    "version": "0.1.7"
+  }
+]
