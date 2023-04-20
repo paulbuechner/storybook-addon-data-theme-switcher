@@ -93,7 +93,7 @@
     "@types/react": "^18.0.35",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.0.1",
     "edit-json-file": "^1.7.0",
