@@ -74,7 +74,7 @@
     "@changesets/types": "^5.2.1",
     "@commitlint/cli": "^17.6.0",
     "@commitlint/config-conventional": "^17.6.0",
-    "@octokit/rest": "^19.0.7",
+    "@octokit/rest": "^20.0.0",
     "@storybook/addon-essentials": "^7.0.4",
     "@storybook/addon-interactions": "^7.0.4",
     "@storybook/addon-links": "^7.0.4",
