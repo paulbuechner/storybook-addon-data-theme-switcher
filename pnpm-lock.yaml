@@ -15,8 +15,8 @@ devDependencies:
     specifier: ^3.0.16
     version: 3.0.16
   '@changesets/types':
-    specifier: ^5.2.1
-    version: 5.2.1
+    specifier: ^6.0.0
+    version: 6.0.0
   '@commitlint/cli':
     specifier: ^18.0.0
     version: 18.0.0
