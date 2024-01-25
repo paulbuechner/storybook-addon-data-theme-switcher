@@ -104,7 +104,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "global": "^4.4.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.0",
     "lint-staged": "^15.0.0",
     "memoizerific": "^1.11.3",
     "postcss": "^8.4.21",
