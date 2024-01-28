@@ -1,7 +1,11 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig((options) => ({
-  entry: ["src/preset/index.ts", "src/preset/preview.ts", "src/preset/manager.ts"],
+  entry: [
+    "src/preset/index.ts",
+    "src/preset/preview.ts",
+    "src/preset/manager.ts",
+  ],
   splitting: false,
   minify: !options.watch,
   format: ["cjs", "esm"],
@@ -12,7 +16,7 @@ export default defineConfig((options) => ({
   sourcemap: true,
   clean: true,
   platform: "browser",
-  esbuildOptions(options) {
-    options.conditions = ["module"];
+  esbuildOptions(esBuildOptions) {
+    esBuildOptions.conditions = ["module"];
   },
 }));

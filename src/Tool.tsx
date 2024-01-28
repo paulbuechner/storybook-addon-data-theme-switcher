@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useGlobals } from "@storybook/manager-api";
 import {
   IconButton,
@@ -44,61 +44,59 @@ const createThemeSelectorItem = memoize(1000)(
   })
 );
 
-const getDisplayableState = memoize(10)(
-  (
-    props: ThemeConfig,
-    state: ThemeToolState,
-    change: (arg: { selected: string; expanded: boolean }) => void
-  ) => {
-    const { clearable, list, default: defaultTheme } = getConfig(props);
+const getDisplayableState = memoize(10)((
+  props: ThemeConfig,
+  state: ThemeToolState,
+  change: (arg: { selected: string; expanded: boolean }) => void
+) => {
+  const { clearable, list, default: defaultTheme } = getConfig(props);
 
-    const selectedThemeName = getSelectedThemeName(
-      list,
-      defaultTheme,
-      state.selected
+  const selectedThemeName = getSelectedThemeName(
+    list,
+    defaultTheme,
+    state.selected
+  );
+
+  let availableThemeSelectorItems: ThemeSelectorItem[] = [];
+  let selectedTheme: Theme | undefined;
+
+  if (selectedThemeName !== "none" && clearable) {
+    availableThemeSelectorItems.push(
+      createThemeSelectorItem(
+        "none",
+        "Clear data-theme",
+        "transparent",
+        false,
+        change,
+        false
+      )
     );
-
-    let availableThemeSelectorItems: ThemeSelectorItem[] = [];
-    let selectedTheme: Theme | undefined;
-
-    if (selectedThemeName !== "none" && clearable) {
-      availableThemeSelectorItems.push(
-        createThemeSelectorItem(
-          "none",
-          "Clear data-theme",
-          "transparent",
-          false,
-          change,
-          false
-        )
-      );
-    }
-
-    if (list.length) {
-      availableThemeSelectorItems = [
-        ...availableThemeSelectorItems,
-        ...list.map(({ dataTheme, color, name }) =>
-          createThemeSelectorItem(
-            name ?? dataTheme,
-            name ?? dataTheme,
-            color ?? "transparent",
-            true,
-            change,
-            name === selectedThemeName
-          )
-        ),
-      ];
-      selectedTheme = getSelectedTheme(list, selectedThemeName);
-    }
-
-    return {
-      items: availableThemeSelectorItems,
-      selectedTheme,
-    };
   }
-);
 
-export const DataThemeSelector = memo(function DataThemeSelector() {
+  if (list.length) {
+    availableThemeSelectorItems = [
+      ...availableThemeSelectorItems,
+      ...list.map(({ dataTheme, color, name }) =>
+        createThemeSelectorItem(
+          name ?? dataTheme,
+          name ?? dataTheme,
+          color ?? "transparent",
+          true,
+          change,
+          name === selectedThemeName
+        )
+      ),
+    ];
+    selectedTheme = getSelectedTheme(list, selectedThemeName);
+  }
+
+  return {
+    items: availableThemeSelectorItems,
+    selectedTheme,
+  };
+});
+
+export const DataThemeSelector = () => {
   const [themeConfig, setThemeConfig] = useState<ThemeConfig>({
     list: [],
   });
@@ -150,6 +148,7 @@ export const DataThemeSelector = memo(function DataThemeSelector() {
       <IconButton
         active={selectedTheme !== undefined}
         key={TOOL_ID}
+        placeholder={selectedTheme?.name ?? "none"}
         title="Change data-theme attribute"
         onClick={() =>
           setThemeToolState((prevState) => ({
@@ -162,4 +161,4 @@ export const DataThemeSelector = memo(function DataThemeSelector() {
       </IconButton>
     </WithTooltip>
   ) : null;
-});
+};
