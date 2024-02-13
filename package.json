@@ -1,5 +1,5 @@
 {
-  "name": "storybook-addon-data-theme-switcher",
+  "name": "flare-storybook-addon-data-theme-switcher",
   "version": "0.3.0",
   "description": "A Storybook addon to switch the data-theme attribute on the html element",
   "keywords": [
@@ -16,10 +16,7 @@
     "daisyUI"
   ],
   "homepage": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher"
-  },
+  "repository": "https://github.com/flarehealth/storybook-addon-data-theme-switcher.git",
   "license": "MIT",
   "author": "Paul Büchner",
   "type": "module",
@@ -60,7 +57,6 @@
     "changelog:format": "prettier --write .changelog",
     "changelog:latest": "tsx scripts/changelog.ts --latest",
     "clean": "rimraf ./dist",
-    "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
     "release": "changeset publish",
     "start": "concurrently \"pnpm build:watch\" \"pnpm storybook --quiet\"",
@@ -153,5 +149,6 @@
       "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
-  }
+  },
+  "private": true
 }
