@@ -4,10 +4,5 @@
   "initialVersions": {
     "storybook-addon-data-theme-switcher": "0.2.0"
   },
-  "changesets": [
-    "empty-squids-turn",
-    "new-kids-serve",
-    "nine-schools-rhyme",
-    "twenty-buckets-sleep"
-  ]
+  "changesets": ["empty-squids-turn", "twenty-buckets-sleep"]
 }
