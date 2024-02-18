@@ -1,9 +1,17 @@
 # Changelog
 
+## 0.3.0-next.0
+
+### Minor Changes
+
+- [`5503038`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/5503038f5f58cd8d7e8124e74597c966bddb6e0c) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Export `ThemeConfig` type to be used with `globalTypes` `dataThemes` configuration options
+
+- [`5503038`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/5503038f5f58cd8d7e8124e74597c966bddb6e0c) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Adds the ability to have a custom data attribute for your html instead of only `data-theme`
 
 ## Latest Release
+
 ### January 28, 2024: [v0.2.0](/.changelog/v0.2.0.mdx)
 
-
 ## Previous Releases
+
 ### April 15, 2023: [v0.1.7](/.changelog/v0.1.7.mdx)
