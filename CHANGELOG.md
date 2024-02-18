@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0-next.2
+
+### Patch Changes
+
+- [`fb4c396`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/fb4c3962d521d5dbb0166d07f9c1580168e63f48) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Try fix package exports
+
 ## 0.3.0-next.1
 
 ### Patch Changes
