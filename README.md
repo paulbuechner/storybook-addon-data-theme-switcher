@@ -62,10 +62,12 @@ module.exports = {
 
 The addon makes use of storybooks `globalTypes` to define and load the themes.
 
-To define a selection of themes, you can add the following to your global
-storybook configuration file `preview.js`:
+To define a selection of themes alongside other configuration options, you can 
+add the following to your global storybook configuration file `preview.js`:
 
-```javascript
+```typescript
+import type { ThemeConfig } from "storybook-addon-data-theme-switcher/types";
+
 export const globalTypes = {
   dataThemes: {
     defaultValue: {
@@ -74,7 +76,9 @@ export const globalTypes = {
         { name: "Candy", dataTheme: "candy", color: "#ffb7d5" },
         { name: "Rose", dataTheme: "rose", color: "#ff007f" },
       ],
-    },
+      dataAttribute: "data-theme", // optional (default: "data-theme")
+      clearable: true,             // optional (default: true)
+    } satisfies Pick<ThemeConfig, "list" | "clearable" | "dataAttribute">,
   },
 };
 ```
@@ -86,6 +90,9 @@ the storybook, you can add the following to your `preview.js` file:
 export const globalTypes = {
   dataTheme: {
     defaultValue: "rainforest",
+  },
+  dataThemes: {
+    ...
   },
 };
 ```

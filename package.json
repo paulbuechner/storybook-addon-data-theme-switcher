@@ -25,19 +25,24 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/preset/index.cjs",
+      "import": "./dist/preset/index.js",
+      "types": "./dist/preset/index.d.ts"
     },
     "./manager": {
-      "require": "./dist/manager.cjs",
-      "import": "./dist/manager.js",
-      "types": "./dist/manager.d.ts"
+      "require": "./dist/preset/manager.cjs",
+      "import": "./dist/preset/manager.js",
+      "types": "./dist/preset/manager.d.ts"
     },
     "./preview": {
-      "require": "./dist/preview.cjs",
-      "import": "./dist/preview.js",
-      "types": "./dist/preview.d.ts"
+      "require": "./dist/preset/preview.cjs",
+      "import": "./dist/preset/preview.js",
+      "types": "./dist/preset/preview.d.ts"
+    },
+    "./types": {
+      "require": "./dist/types/ThemeConfig.cjs",
+      "import": "./dist/types/ThemeConfig.js",
+      "types": "./dist/types/ThemeConfig.d.ts"
     },
     "./package.json": "./package.json"
   },

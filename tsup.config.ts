@@ -5,6 +5,7 @@ export default defineConfig((options) => ({
     "src/preset/index.ts",
     "src/preset/preview.ts",
     "src/preset/manager.ts",
+    "src/types/ThemeConfig.ts",
   ],
   splitting: false,
   minify: !options.watch,
