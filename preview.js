@@ -1,1 +1,1 @@
-export * from "./dist/preset/preview";
+export * from "./dist/preview";

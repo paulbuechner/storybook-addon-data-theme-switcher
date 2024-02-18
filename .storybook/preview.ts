@@ -1,9 +1,9 @@
 import type { Preview } from "@storybook/react";
-import type { ThemeConfig } from "@/types";
+import type { ThemeConfig } from "@/preset/types";
 
 import "../styles/globals.css";
 
-const preview: Preview = {
+const preview = {
   parameters: {
     backgrounds: {
       default: "light",
@@ -29,9 +29,9 @@ const preview: Preview = {
         ],
         dataAttribute: "data-theme",
         clearable: true,
-      } satisfies Pick<ThemeConfig, "list" | "clearable" | "dataAttribute">,
+      } satisfies ThemeConfig,
     },
   },
-};
+} satisfies Preview;
 
 export default preview;

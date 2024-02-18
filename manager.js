@@ -1,1 +1,1 @@
-export * from "./dist/preset/manager";
+export * from "./dist/manager";
