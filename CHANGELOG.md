@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0-next.1
+
+### Patch Changes
+
+- Try fix package exports
+
 ## 0.3.0-next.0
 
 ### Minor Changes
