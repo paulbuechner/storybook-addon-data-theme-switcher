@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "storybook-addon-data-theme-switcher": "0.2.0"
+  },
+  "changesets": ["empty-squids-turn", "twenty-buckets-sleep"]
+}

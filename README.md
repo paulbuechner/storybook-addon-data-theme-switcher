@@ -20,13 +20,13 @@
 
 </div>
 
-</br>
+<br/>
 
 <div style="width: 100%;">
   <img src="docs/animation.gif" style="width: 100%;" alt="Addon preview animation">
 </div>
 
-</br>
+<br/>
 
 This Addon lets you switch the `data-theme` attribute in your Storybook, by
 selecting a defined theme from a toolbar dropdown and adding the selected theme
@@ -62,10 +62,12 @@ module.exports = {
 
 The addon makes use of storybooks `globalTypes` to define and load the themes.
 
-To define a selection of themes, you can add the following to your global
-storybook configuration file `preview.js`:
+To define a selection of themes alongside other configuration options, you can 
+add the following to your global storybook configuration file `preview.js`:
 
-```javascript
+```typescript
+import type { ThemeConfig } from "storybook-addon-data-theme-switcher";
+
 export const globalTypes = {
   dataThemes: {
     defaultValue: {
@@ -74,7 +76,9 @@ export const globalTypes = {
         { name: "Candy", dataTheme: "candy", color: "#ffb7d5" },
         { name: "Rose", dataTheme: "rose", color: "#ff007f" },
       ],
-    },
+      dataAttribute: "data-theme", // optional (default: "data-theme")
+      clearable: true,             // optional (default: true)
+    } satisfies ThemeConfig,
   },
 };
 ```
@@ -86,6 +90,9 @@ the storybook, you can add the following to your `preview.js` file:
 export const globalTypes = {
   dataTheme: {
     defaultValue: "rainforest",
+  },
+  dataThemes: {
+    ...
   },
 };
 ```

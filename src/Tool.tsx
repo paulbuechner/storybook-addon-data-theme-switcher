@@ -8,7 +8,7 @@ import {
 } from "@storybook/components";
 import memoize from "memoizerific";
 
-import { PARAM_KEY, TOOL_ID } from "@/constants";
+import { DATA_THEME_KEY, TOOL_ID } from "@/constants";
 import { getConfig, getSelectedTheme, getSelectedThemeName } from "@/utils";
 import { ColorIcon } from "@/components";
 import type {
@@ -121,7 +121,7 @@ export const DataThemeSelector = () => {
       const { list } = getConfig(themeConfig);
       const selectedTheme = getSelectedTheme(list, args.selected);
       updateThemeGlobals({
-        [PARAM_KEY]: selectedTheme?.dataTheme ?? "none",
+        [DATA_THEME_KEY]: selectedTheme?.dataTheme ?? "none",
       });
 
       const { onChange } = getConfig(themeConfig);
