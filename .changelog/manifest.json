@@ -1,5 +1,12 @@
 [
   {
+    "id": 124,
+    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/124",
+    "body": "---\ntitle: Version 0.4.0\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 0.4.0. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/124\nreleaseDate: March 19, 2024\nversion: 0.4.0\n---\n\n\n\n## storybook-addon-data-theme-switcher@0.4.0\n\n### Minor Changes\n\n-   [#123](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/123) [`fbc097a`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/fbc097a8fee6c04ccc381741f53fd62bf7d61934) Thanks [@paulbuechner](https://github.com/paulbuechner)! - feat: add title and icon toolbar customization options\n",
+    "date": "March 19, 2024",
+    "version": "0.4.0"
+  },
+  {
     "id": 78,
     "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/78",
     "body": "---\ntitle: Version 0.2.0\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 0.2.0. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/78\nreleaseDate: January 28, 2024\nversion: 0.2.0\n---\n\n\n\n## storybook-addon-data-theme-switcher@0.2.0\n\n### Minor Changes\n\n-   [`e73b4fa`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/e73b4fa303d00b9229092f4d709a5f65b255e0cd) Thanks [@paulbuechner](https://github.com/paulbuechner)! - ECMAScript Module (ESM) First: The package now prioritizes ESM format to align with modern JavaScript ecosystem standards.\n",
