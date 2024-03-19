@@ -152,7 +152,6 @@ export const DataThemeSelector = () => {
       <IconButton
         active={selectedTheme !== undefined}
         key={TOOL_ID}
-        placeholder={selectedTheme?.name ?? "none"}
         title={themeConfig.toolbar.title}
         onClick={() =>
           setThemeToolState((prevState) => ({
