@@ -1,11 +1,20 @@
+import type { IconsProps } from "@storybook/components";
+
 import type { Theme } from "./Theme";
 
-export interface ThemeConfig {
+type ToolbarConfig = {
   /**
-   * Controls whether the user can clear the theme selection.
+   * The title to display in the toolbar.
    */
-  clearable?: boolean;
+  title: string;
 
+  /**
+   * The icon to display in the toolbar.
+   */
+  icon: IconsProps["icon"];
+};
+
+export interface ThemeConfig {
   /**
    * The data theme value to use for the active theme. Retrieved from globalTypes globals["dataTheme"].
    */
@@ -20,6 +29,16 @@ export interface ThemeConfig {
    * The data attribute to use. Retrieved from globalTypes globals["dataAttribute"].
    */
   dataAttribute?: string;
+
+  /**
+   * Controls whether the user can clear the theme selection.
+   */
+  clearable?: boolean;
+
+  /**
+   * The toolbar configuration.
+   */
+  toolbar: ToolbarConfig;
 
   /**
    * The function to call when the theme changes.

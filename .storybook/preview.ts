@@ -29,6 +29,10 @@ const preview = {
         ],
         dataAttribute: "data-theme",
         clearable: true,
+        toolbar: {
+          title: "Change data-theme attribute",
+          icon: "paintbrush",
+        },
       } satisfies ThemeConfig,
     },
   },
