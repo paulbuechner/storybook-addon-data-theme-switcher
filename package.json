@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-data-theme-switcher",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A Storybook addon to switch the data-theme attribute on the html element",
   "keywords": [
     "storybook-addons",
