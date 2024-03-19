@@ -21,7 +21,7 @@ export const withGlobals = (StoryFn: StoryFunction<Renderer>) => {
       document.documentElement.setAttribute(dataAttribute, dataTheme);
       window.localStorage.setItem(dataAttribute, dataTheme);
     }
-  }, [dataTheme, updateGlobals]);
+  }, [dataAttribute, dataTheme, updateGlobals]);
 
   return StoryFn();
 };
