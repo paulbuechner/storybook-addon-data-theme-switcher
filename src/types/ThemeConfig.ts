@@ -6,12 +6,12 @@ type ToolbarConfig = {
   /**
    * The title to display in the toolbar.
    */
-  title: string;
+  title?: string;
 
   /**
    * The icon to display in the toolbar.
    */
-  icon: IconsProps["icon"];
+  icon?: IconsProps["icon"];
 };
 
 export interface ThemeConfig {
@@ -38,7 +38,7 @@ export interface ThemeConfig {
   /**
    * The toolbar configuration.
    */
-  toolbar: ToolbarConfig;
+  toolbar?: ToolbarConfig;
 
   /**
    * The function to call when the theme changes.

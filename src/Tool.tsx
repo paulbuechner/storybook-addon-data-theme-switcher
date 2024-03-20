@@ -98,10 +98,6 @@ const getDisplayableState = memoize(10)((
 
 export const DataThemeSelector = () => {
   const [themeConfig, setThemeConfig] = useState<ThemeConfig>({
-    toolbar: {
-      title: "Change data-theme attribute",
-      icon: "paintbrush",
-    },
     list: [],
   });
 
@@ -152,7 +148,7 @@ export const DataThemeSelector = () => {
       <IconButton
         active={selectedTheme !== undefined}
         key={TOOL_ID}
-        title={themeConfig.toolbar.title}
+        title={themeConfig.toolbar?.title ?? "Change data-theme attribute"}
         onClick={() =>
           setThemeToolState((prevState) => ({
             ...prevState,
@@ -160,7 +156,7 @@ export const DataThemeSelector = () => {
           }))
         }
       >
-        <Icons icon={themeConfig.toolbar.icon} />
+        <Icons icon={themeConfig.toolbar?.icon ?? "paintbrush"} />
       </IconButton>
     </WithTooltip>
   ) : null;
