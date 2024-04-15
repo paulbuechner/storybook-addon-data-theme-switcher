@@ -22,7 +22,7 @@ devDependencies:
     version: 19.2.0(@types/node@20.12.2)(typescript@5.4.2)
   '@commitlint/config-conventional':
     specifier: ^19.0.0
-    version: 19.1.0
+    version: 19.2.2
   '@octokit/rest':
     specifier: ^20.0.2
     version: 20.1.0
@@ -1726,8 +1726,8 @@ packages:
       - typescript
     dev: true
 
-  /@commitlint/config-conventional@19.1.0:
-    resolution: {integrity: sha512-KIKD2xrp6Uuk+dcZVj3++MlzIr/Su6zLE8crEDQCZNvWHNQSeeGbzOlNtsR32TUy6H3JbP7nWgduAHCaiGQ6EA==}
+  /@commitlint/config-conventional@19.2.2:
+    resolution: {integrity: sha512-mLXjsxUVLYEGgzbxbxicGPggDuyWNkf25Ht23owXIH+zV2pv1eJuzLK3t1gDY5Gp6pxdE60jZnWUY5cvgL3ufw==}
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/types': 19.0.3
@@ -3306,7 +3306,7 @@ packages:
       '@storybook/telemetry': 8.0.2
       '@storybook/types': 8.0.2
       '@types/detect-port': 1.3.5
-      '@types/node': 18.19.28
+      '@types/node': 18.19.31
       '@types/pretty-hrtime': 1.0.3
       '@types/semver': 7.5.8
       better-opn: 3.0.2
@@ -3870,6 +3870,12 @@ packages:
 
   /@types/node@18.19.28:
     resolution: {integrity: sha512-J5cOGD9n4x3YGgVuaND6khm5x07MMdAKkRyXnjVR6KFhLMNh2yONGiP7Z+4+tBOt5mK+GvDTiacTOVGGpqiecw==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
+
+  /@types/node@18.19.31:
+    resolution: {integrity: sha512-ArgCD39YpyyrtFKIqMDvjz79jto5fcI/SVUs2HwB+f0dAzq68yqOdyaSivLiLugSziTpNXLQrVb7RZFmdZzbhA==}
     dependencies:
       undici-types: 5.26.5
     dev: true
