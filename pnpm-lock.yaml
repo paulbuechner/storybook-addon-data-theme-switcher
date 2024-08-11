@@ -22,7 +22,7 @@ importers:
         version: 6.0.0
       '@commitlint/cli':
         specifier: ^19.0.0
-        version: 19.3.0(@types/node@20.14.0)(typescript@5.5.2)
+        version: 19.4.0(@types/node@20.14.0)(typescript@5.5.2)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.2.2
@@ -157,7 +157,7 @@ importers:
         version: 3.4.1
       tsup:
         specifier: ^8.0.1
-        version: 8.2.1(jiti@1.21.0)(postcss@8.4.35)(tsx@4.16.0)(typescript@5.5.2)(yaml@2.4.5)
+        version: 8.2.1(jiti@1.21.6)(postcss@8.4.35)(tsx@4.16.0)(typescript@5.5.2)(yaml@2.4.5)
       tsx:
         specifier: ^4.7.0
         version: 4.16.0
@@ -965,8 +965,8 @@ packages:
   '@changesets/write@0.3.0':
     resolution: {integrity: sha512-slGLb21fxZVUYbyea+94uFiD6ntQW0M2hIKNznFizDhZPDgn2c/fv1UzzlW43RVzh1BEDuIqW6hzlJ1OflNmcw==}
 
-  '@commitlint/cli@19.3.0':
-    resolution: {integrity: sha512-LgYWOwuDR7BSTQ9OLZ12m7F/qhNY+NpAyPBgo4YNMkACE7lGuUnuQq1yi9hz1KA4+3VqpOYl8H1rY/LYK43v7g==}
+  '@commitlint/cli@19.4.0':
+    resolution: {integrity: sha512-sJX4J9UioVwZHq7JWM9tjT5bgWYaIN3rC4FP7YwfEwBYiIO+wMyRttRvQLNkow0vCdM0D67r9NEWU0Ui03I4Eg==}
     engines: {node: '>=v18'}
     hasBin: true
 
@@ -998,8 +998,8 @@ packages:
     resolution: {integrity: sha512-xrzMmz4JqwGyKQKTpFzlN0dx0TAiT7Ran1fqEBgEmEj+PU98crOFtysJgY+QdeSagx6EDRigQIXJVnfrI0ratA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/load@19.2.0':
-    resolution: {integrity: sha512-XvxxLJTKqZojCxaBQ7u92qQLFMMZc4+p9qrIq/9kJDy8DOrEa7P1yx7Tjdc2u2JxIalqT4KOGraVgCE7eCYJyQ==}
+  '@commitlint/load@19.4.0':
+    resolution: {integrity: sha512-I4lCWaEZYQJ1y+Y+gdvbGAx9pYPavqZAZ3/7/8BpWh+QjscAn8AjsUpLV2PycBsEx7gupq5gM4BViV9xwTIJuw==}
     engines: {node: '>=v18'}
 
   '@commitlint/message@19.0.0':
@@ -1010,8 +1010,8 @@ packages:
     resolution: {integrity: sha512-Il+tNyOb8VDxN3P6XoBBwWJtKKGzHlitEuXA5BP6ir/3loWlsSqDr5aecl6hZcC/spjq4pHqNh0qPlfeWu38QA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/read@19.2.1':
-    resolution: {integrity: sha512-qETc4+PL0EUv7Q36lJbPG+NJiBOGg7SSC7B5BsPWOmei+Dyif80ErfWQ0qXoW9oCh7GTpTNRoaVhiI8RbhuaNw==}
+  '@commitlint/read@19.4.0':
+    resolution: {integrity: sha512-r95jLOEZzKDakXtnQub+zR3xjdnrl2XzerPwm7ch1/cc5JGq04tyaNpa6ty0CRCWdVrk4CZHhqHozb8yZwy2+g==}
     engines: {node: '>=v18'}
 
   '@commitlint/resolve-extends@19.1.0':
@@ -3410,8 +3410,8 @@ packages:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
 
-  import-meta-resolve@4.0.0:
-    resolution: {integrity: sha512-okYUR7ZQPH+efeuMJGlq4f8ubUgO50kByRPyt/Cy1Io4PSRsPjxME+YlVaCOx+NIToW7hCsZNFJyTPFFKepRSA==}
+  import-meta-resolve@4.1.0:
+    resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
 
   imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
@@ -3652,6 +3652,10 @@ packages:
 
   jiti@1.21.0:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
+    hasBin: true
+
+  jiti@1.21.6:
+    resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
 
   joycon@3.1.1:
@@ -4920,8 +4924,8 @@ packages:
     resolution: {integrity: sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==}
     engines: {node: '>=12'}
 
-  string-width@7.1.0:
-    resolution: {integrity: sha512-SEIJCWiX7Kg4c129n48aDRwLbFb2LJmXXFrWBG4NGaRtMQ3myKPKbwrD1BKqQn74oCoNMBVrfDEr5M9YxCsrkw==}
+  string-width@7.2.0:
+    resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
   string.prototype.includes@2.0.0:
@@ -6639,12 +6643,12 @@ snapshots:
       human-id: 1.0.2
       prettier: 2.8.8
 
-  '@commitlint/cli@19.3.0(@types/node@20.14.0)(typescript@5.5.2)':
+  '@commitlint/cli@19.4.0(@types/node@20.14.0)(typescript@5.5.2)':
     dependencies:
       '@commitlint/format': 19.3.0
       '@commitlint/lint': 19.2.2
-      '@commitlint/load': 19.2.0(@types/node@20.14.0)(typescript@5.5.2)
-      '@commitlint/read': 19.2.1
+      '@commitlint/load': 19.4.0(@types/node@20.14.0)(typescript@5.5.2)
+      '@commitlint/read': 19.4.0
       '@commitlint/types': 19.0.3
       execa: 8.0.1
       yargs: 17.7.2
@@ -6690,7 +6694,7 @@ snapshots:
       '@commitlint/rules': 19.0.3
       '@commitlint/types': 19.0.3
 
-  '@commitlint/load@19.2.0(@types/node@20.14.0)(typescript@5.5.2)':
+  '@commitlint/load@19.4.0(@types/node@20.14.0)(typescript@5.5.2)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -6714,7 +6718,7 @@ snapshots:
       conventional-changelog-angular: 7.0.0
       conventional-commits-parser: 5.0.0
 
-  '@commitlint/read@19.2.1':
+  '@commitlint/read@19.4.0':
     dependencies:
       '@commitlint/top-level': 19.0.0
       '@commitlint/types': 19.0.3
@@ -6727,7 +6731,7 @@ snapshots:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/types': 19.0.3
       global-directory: 4.0.1
-      import-meta-resolve: 4.0.0
+      import-meta-resolve: 4.1.0
       lodash.mergewith: 4.6.2
       resolve-from: 5.0.0
 
@@ -8239,7 +8243,7 @@ snapshots:
   cli-truncate@4.0.0:
     dependencies:
       slice-ansi: 5.0.0
-      string-width: 7.1.0
+      string-width: 7.2.0
 
   cliui@6.0.0:
     dependencies:
@@ -8341,7 +8345,7 @@ snapshots:
     dependencies:
       '@types/node': 20.14.0
       cosmiconfig: 9.0.0(typescript@5.5.2)
-      jiti: 1.21.0
+      jiti: 1.21.6
       typescript: 5.5.2
 
   cosmiconfig@9.0.0(typescript@5.5.2):
@@ -9476,7 +9480,7 @@ snapshots:
       parent-module: 1.0.1
       resolve-from: 4.0.0
 
-  import-meta-resolve@4.0.0: {}
+  import-meta-resolve@4.1.0: {}
 
   imurmurhash@0.1.4: {}
 
@@ -9681,6 +9685,8 @@ snapshots:
       '@pkgjs/parseargs': 0.11.0
 
   jiti@1.21.0: {}
+
+  jiti@1.21.6: {}
 
   joycon@3.1.1: {}
 
@@ -10338,11 +10344,11 @@ snapshots:
     optionalDependencies:
       postcss: 8.4.35
 
-  postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.35)(tsx@4.16.0)(yaml@2.4.5):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.35)(tsx@4.16.0)(yaml@2.4.5):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
-      jiti: 1.21.0
+      jiti: 1.21.6
       postcss: 8.4.35
       tsx: 4.16.0
       yaml: 2.4.5
@@ -10965,7 +10971,7 @@ snapshots:
       emoji-regex: 9.2.2
       strip-ansi: 7.1.0
 
-  string-width@7.1.0:
+  string-width@7.2.0:
     dependencies:
       emoji-regex: 10.3.0
       get-east-asian-width: 1.2.0
@@ -11212,7 +11218,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.2.1(jiti@1.21.0)(postcss@8.4.35)(tsx@4.16.0)(typescript@5.5.2)(yaml@2.4.5):
+  tsup@8.2.1(jiti@1.21.6)(postcss@8.4.35)(tsx@4.16.0)(typescript@5.5.2)(yaml@2.4.5):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -11225,7 +11231,7 @@ snapshots:
       joycon: 3.1.1
       picocolors: 1.0.1
       picomatch: 4.0.2
-      postcss-load-config: 6.0.1(jiti@1.21.0)(postcss@8.4.35)(tsx@4.16.0)(yaml@2.4.5)
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.35)(tsx@4.16.0)(yaml@2.4.5)
       resolve-from: 5.0.0
       rollup: 4.19.0
       source-map: 0.8.0-beta.0
@@ -11541,7 +11547,7 @@ snapshots:
   wrap-ansi@9.0.0:
     dependencies:
       ansi-styles: 6.2.1
-      string-width: 7.1.0
+      string-width: 7.2.0
       strip-ansi: 7.1.0
 
   wrappy@1.0.2: {}
