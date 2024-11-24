@@ -101,7 +101,7 @@
     "@typescript-eslint/parser": "^8.0.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
-    "concurrently": "^8.2.2",
+    "concurrently": "^9.0.0",
     "edit-json-file": "^1.8.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
