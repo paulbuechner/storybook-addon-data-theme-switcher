@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "storybook-addon-data-theme-switcher": "0.4.2"
+  },
+  "changesets": [
+    "purple-kids-wait"
+  ]
+}
