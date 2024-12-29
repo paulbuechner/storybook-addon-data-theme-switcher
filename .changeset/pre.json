@@ -5,6 +5,7 @@
     "storybook-addon-data-theme-switcher": "0.4.2"
   },
   "changesets": [
-    "purple-kids-wait"
+    "purple-kids-wait",
+    "violet-seals-report"
   ]
 }
