@@ -14,6 +14,13 @@
     "version": "0.4.2"
   },
   {
+    "id": 126,
+    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/126",
+    "body": "---\ntitle: Version 0.4.2\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 0.4.2. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/126\nreleaseDate: March 20, 2024\nversion: 0.4.2\n---\n\n\n\n## storybook-addon-data-theme-switcher@0.4.2\n\n### Patch Changes\n\n-   [`7d7aa71`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/7d7aa719a4a0de1c33b62ed8fa60d7714141940e) Thanks [@paulbuechner](https://github.com/paulbuechner)! - fix: make toolbar customizations optional\n",
+    "date": "March 20, 2024",
+    "version": "0.4.2"
+  },
+  {
     "id": 125,
     "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/125",
     "body": "---\ntitle: Version 0.4.1\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 0.4.1. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/125\nreleaseDate: March 19, 2024\nversion: 0.4.1\n---\n\n\n\n## storybook-addon-data-theme-switcher@0.4.1\n\n### Patch Changes\n\n-   [`5e8259c`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/5e8259c39d901219bdd4cd99273d9bbdde5d883d) Thanks [@paulbuechner](https://github.com/paulbuechner)! - chore: official support for storybook v8\n",
