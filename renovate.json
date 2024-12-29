@@ -2,20 +2,20 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
   "timezone": "CET",
-  "schedule": ["before 5am on monday"],
+  "schedule": ["after 4am on Monday"],
   "packageRules": [
     {
-      "description": "Automatically merge minor updates",
-      "matchUpdateTypes": ["minor"],
+      "description": "Exclude patch updates",
+      "matchUpdateTypes": ["patch"],
+      "enabled": false
+    },
+    {
+      "matchUpdateTypes": ["minor", "pin", "digest"],
       "automerge": true
     },
     {
       "groupName": "@storybook",
       "matchPackagePatterns": ["storybook", "@storybook/*"]
-    },
-    {
-      "matchUpdateTypes": ["patch"],
-      "enabled": false
     }
   ]
 }
