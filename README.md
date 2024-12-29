@@ -36,7 +36,11 @@ This comes in handy if you want to test your components with different themes.
 
 ## Compatibility
 
-This addon is compatible with storybook version `^7.0.x` | `^8.0.x`.
+This addon is compatible with storybook version `^8.3.x`.
+
+> **NOTE**: For storybook versions below `8.3.x` use [
+`storybook-addon-data-theme-switcher@0.4.2`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/releases/tag/v0.4.2).
+> Find more information [here](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/tree/release/storybook-addon-data-theme-switcher-0.4.2).
 
 ## Installation
 
@@ -46,44 +50,43 @@ npm install storybook-addon-data-theme-switcher --save-dev
 
 ## Getting Started
 
-Then activate the addon by adding it to the storybook `main.js` file 
+Then activate the addon by adding it to the storybook `main.js` file
 (located in the Storybook config directory):
 
 ```javascript
 module.exports = {
-  addons: [
-    // other addons here
-    "storybook-addon-data-theme-switcher",
-  ],
+    addons: [
+        // other addons here
+        "storybook-addon-data-theme-switcher",
+    ],
 };
 ```
 
 ## Configuration
 
-The addon makes use of storybooks `globalTypes` to define and load the themes.
+The addon makes use of storybooks `initialGlobals` to define and load the
+themes.
 
-To define a selection of themes alongside other configuration options, you can 
+To define a selection of themes alongside other configuration options, you can
 add the following to your global storybook configuration file `preview.js`:
 
 ```typescript
-import type { ThemeConfig } from "storybook-addon-data-theme-switcher";
+import type {ThemeConfig} from "storybook-addon-data-theme-switcher";
 
-export const globalTypes = {
-  dataThemes: {
-    defaultValue: {
-      list: [
-        { name: "Rainforest", dataTheme: "rainforest", color: "#00755e" },
-        { name: "Candy", dataTheme: "candy", color: "#ffb7d5" },
-        { name: "Rose", dataTheme: "rose", color: "#ff007f" },
-      ],
-      dataAttribute: "data-theme",            // optional (default: "data-theme")
-      clearable: true,                        // optional (default: true)
-      toolbar: {
-        title: "Change data-theme attribute", // optional
-        icon: "paintbrush",                   // optional
-      },
+export const initialGlobals = {
+    dataThemes: {
+        list: [
+            {name: "Rainforest", dataTheme: "rainforest", color: "#00755e"},
+            {name: "Candy", dataTheme: "candy", color: "#ffb7d5"},
+            {name: "Rose", dataTheme: "rose", color: "#ff007f"},
+        ],
+        dataAttribute: "data-theme",            // optional (default: "data-theme")
+        clearable: true,                        // optional (default: true)
+        toolbar: {
+            title: "Change data-theme attribute", // optional
+            icon: "PaintBrushIcon",               // optional
+        },
     } satisfies ThemeConfig,
-  },
 };
 ```
 
@@ -91,13 +94,11 @@ To set a default `data-theme` value, which will be used in the initial load of
 the storybook, you can add the following to your `preview.js` file:
 
 ```javascript
-export const globalTypes = {
-  dataTheme: {
-    defaultValue: "rainforest",
-  },
-  dataThemes: {
-    ...
-  },
+export const initialGlobals = {
+    dataTheme: "rainforest",
+    dataThemes: {
+        ...
+    },
 };
 ```
 
