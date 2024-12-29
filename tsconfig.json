@@ -10,6 +10,7 @@
     "lib": ["es2020", "dom"],
     "noImplicitAny": true,
     "moduleResolution": "Bundler",
+    "module": "es2020",
     "skipLibCheck": true,
     "target": "ES2020",
     "baseUrl": ".",
