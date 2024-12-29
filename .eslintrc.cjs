@@ -16,14 +16,14 @@ module.exports = {
     {
       files: ["*.ts", "*.tsx"],
       parserOptions: {
-        project: path.join(__dirname, "tsconfig.json"),
-      },
-    },
+        project: path.join(__dirname, "tsconfig.json")
+      }
+    }
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: path.join(__dirname, "tsconfig.json"),
+    project: path.join(__dirname, "tsconfig.json")
   },
   plugins: ["@typescript-eslint", "import"],
   rules: {
@@ -31,23 +31,23 @@ module.exports = {
     "@typescript-eslint/consistent-type-imports": [
       "error",
       {
-        prefer: "type-imports",
-      },
+        prefer: "type-imports"
+      }
     ],
     "@typescript-eslint/naming-convention": [
       "error",
       {
         format: ["PascalCase"],
-        selector: "typeLike",
+        selector: "typeLike"
       },
       {
         custom: {
           match: false,
-          regex: "^I[A-Z]",
+          regex: "^I[A-Z]"
         },
         format: ["PascalCase"],
-        selector: "interface",
-      },
+        selector: "interface"
+      }
     ],
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-unsafe-assignment": "off",
@@ -56,25 +56,24 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": [
       "error",
       {
-        ignoreTypeReferences: true,
-      },
+        ignoreTypeReferences: true
+      }
     ],
     "@typescript-eslint/prefer-optional-chain": "error",
-    "@typescript-eslint/quotes": ["error", "double"],
     "import/extensions": [
       "error",
       "never",
       {
         css: "always",
         json: "always",
-        mjs: "always",
-      },
+        mjs: "always"
+      }
     ],
     "import/no-extraneous-dependencies": [
       "error",
       {
-        devDependencies: true,
-      },
+        devDependencies: true
+      }
     ],
     "import/order": [
       1,
@@ -85,17 +84,18 @@ module.exports = {
           "internal",
           "sibling",
           "parent",
-          "index",
+          "index"
         ],
-        "newlines-between": "always",
-      },
+        "newlines-between": "always"
+      }
     ],
     "import/prefer-default-export": "off",
+    "quotes": ["error", "double"],
     "no-console": [
       "warn",
       {
-        allow: ["error"],
-      },
+        allow: ["error"]
+      }
     ],
     "no-param-reassign": "off",
     "no-restricted-exports": "off",
@@ -108,11 +108,11 @@ module.exports = {
       {
         allowSeparatedGroups: true,
         ignoreCase: true,
-        ignoreDeclarationSort: true,
-      },
-    ],
+        ignoreDeclarationSort: true
+      }
+    ]
   },
   settings: {
-    "import/internal-regex": "^@/",
-  },
+    "import/internal-regex": "^@/"
+  }
 };
