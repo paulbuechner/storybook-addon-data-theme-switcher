@@ -19,10 +19,8 @@ import { withGlobals } from "@/withGlobals";
 
 const preview: ProjectAnnotations<Renderer> = {
   decorators: [withGlobals],
-  globalTypes: {
-    dataTheme: {
-      defaultValue: "none",
-    },
+  initialGlobals: {
+    dataTheme: "none",
   },
 };
 

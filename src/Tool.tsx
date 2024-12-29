@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import type { ElementType } from "react";
 import { useGlobals } from "@storybook/manager-api";
 import {
   IconButton,
-  Icons,
   TooltipLinkList,
   WithTooltip,
 } from "@storybook/components";
 import memoize from "memoizerific";
+import * as Icon from "@storybook/icons";
 
 import { DATA_THEME_KEY, TOOL_ID } from "@/constants";
 import { getConfig, getSelectedTheme, getSelectedThemeName } from "@/utils";
@@ -107,7 +108,7 @@ export const DataThemeSelector = () => {
   });
 
   const [{ dataTheme, dataThemes: themes }, updateThemeGlobals] =
-    useGlobals() as [ThemeGlobals, UpdateThemeGlobalsFn];
+    useGlobals() as unknown as [ThemeGlobals, UpdateThemeGlobalsFn];
 
   useEffect(() => {
     setThemeConfig({ default: dataTheme, ...themes });
@@ -137,6 +138,10 @@ export const DataThemeSelector = () => {
     [themeConfig, themeToolState, change]
   );
 
+  const ThemeConfigIcon = Icon[
+    themeConfig.toolbar?.icon ?? ("PaintBrushIcon" as keyof typeof Icon)
+  ] as never as ElementType;
+
   return themeConfig.list && themeConfig.list.length > 0 ? (
     <WithTooltip
       key={TOOL_ID}
@@ -156,7 +161,7 @@ export const DataThemeSelector = () => {
           }))
         }
       >
-        <Icons icon={themeConfig.toolbar?.icon ?? "paintbrush"} />
+        <ThemeConfigIcon />
       </IconButton>
     </WithTooltip>
   ) : null;

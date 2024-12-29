@@ -1,4 +1,4 @@
-import type { IconsProps } from "@storybook/components";
+import type { IconName } from "@/generated/types";
 
 import type { Theme } from "./Theme";
 
@@ -11,7 +11,7 @@ type ToolbarConfig = {
   /**
    * The icon to display in the toolbar.
    */
-  icon?: IconsProps["icon"];
+  icon?: IconName;
 };
 
 export interface ThemeConfig {

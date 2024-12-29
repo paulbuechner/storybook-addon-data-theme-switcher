@@ -15,25 +15,21 @@ const preview = {
       },
     },
   },
-  globalTypes: {
-    dataTheme: {
-      defaultValue: "rainforest",
-    },
+  initialGlobals: {
+    dataTheme: "rainforest",
     dataThemes: {
-      defaultValue: {
-        list: [
-          { name: "Rainforest", dataTheme: "rainforest", color: "#00755e" },
-          { name: "Candy", dataTheme: "candy", color: "#ffb7d5" },
-          { name: "Rose", dataTheme: "rose", color: "#be123c" },
-        ],
-        dataAttribute: "data-theme",
-        clearable: true,
-        toolbar: {
-          title: "Change data-theme attribute",
-          icon: "paintbrush",
-        },
-      } satisfies ThemeConfig,
-    },
+      list: [
+        { name: "Rainforest", dataTheme: "rainforest", color: "#00755e" },
+        { name: "Candy", dataTheme: "candy", color: "#ffb7d5" },
+        { name: "Rose", dataTheme: "rose", color: "#be123c" },
+      ],
+      dataAttribute: "data-theme",
+      clearable: true,
+      toolbar: {
+        title: "Change data-theme attribute",
+        icon: "PaintBrushIcon",
+      },
+    } satisfies ThemeConfig,
   },
 } satisfies Preview;
 
