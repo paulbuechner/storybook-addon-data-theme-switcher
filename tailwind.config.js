@@ -1,5 +1,5 @@
 /** @type {import("tailwindcss").Config} */
-module.exports = {
+const config = {
   content: ["src/stories/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -21,3 +21,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+export default config;

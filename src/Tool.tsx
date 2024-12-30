@@ -138,8 +138,11 @@ export const DataThemeSelector = () => {
     [themeConfig, themeToolState, change]
   );
 
+  const iconKey = themeConfig.toolbar?.icon ?? "PaintBrushIcon";
+
   const ThemeConfigIcon = Icon[
-    themeConfig.toolbar?.icon ?? ("PaintBrushIcon" as keyof typeof Icon)
+    // eslint-disable-next-line import/namespace
+    iconKey as keyof typeof Icon
   ] as never as ElementType;
 
   return themeConfig.list && themeConfig.list.length > 0 ? (
