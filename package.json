@@ -98,7 +98,7 @@
     "@types/edit-json-file": "^1.7.3",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.0.0",
-    "@types/react": "^18.3.18",
+    "@types/react": "^19.0.10",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "edit-json-file": "^1.8.0",
