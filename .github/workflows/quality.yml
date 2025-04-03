@@ -25,7 +25,6 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 8
           run_install: false
 
       - name: Cache node modules
@@ -44,4 +43,3 @@ jobs:
 
       # - name: Test addon
       #   run: pnpm test
-
