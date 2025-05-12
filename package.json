@@ -113,7 +113,7 @@
     "eslint-plugin-storybook": "^0.12.0",
     "global": "^4.4.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.3.0",
+    "lint-staged": "^16.0.0",
     "memoizerific": "^1.11.3",
     "npm-run-all2": "^8.0.0",
     "postcss": "^8.4.49",
