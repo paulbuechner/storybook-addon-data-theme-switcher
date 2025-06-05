@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import type { ElementType } from "react";
-import { useGlobals } from "@storybook/manager-api";
+import { useGlobals } from "storybook/manager-api";
 import {
   IconButton,
   TooltipLinkList,
   WithTooltip,
-} from "@storybook/components";
+} from "storybook/internal/components";
 import memoize from "memoizerific";
 import * as Icon from "@storybook/icons";
 
