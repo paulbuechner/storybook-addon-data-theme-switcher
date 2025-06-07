@@ -4,5 +4,8 @@
   "initialVersions": {
     "storybook-addon-data-theme-switcher": "1.0.1"
   },
-  "changesets": []
+  "changesets": [
+    "afraid-pants-give",
+    "witty-wombats-peel"
+  ]
 }
