@@ -1,5 +1,12 @@
 [
   {
+    "id": 303,
+    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/303",
+    "body": "---\ntitle: Version 2.0.0-next.0\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 2.0.0-next.0. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/303\nreleaseDate: June 7, 2025\nversion: 2.0.0-next.0\n---\n\n\n\n## storybook-addon-data-theme-switcher@2.0.0-next.0\n\n### Major Changes\n\n-   [#302](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/302) [`509ca72`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/509ca72c8f09be3a038116c5916e1b2cd12e9507) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Upgraded the addon to be compatible with Storybook v9.\n\n    -   Updated required peer dependencies to Storybook v9 layout.\n\n### Minor Changes\n\n-   [#302](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/302) [`509ca72`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/509ca72c8f09be3a038116c5916e1b2cd12e9507) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Updated `@storybook/icons` to version [`1.4.0`]((https://github.com/storybookjs/icons/releases/tag/v1.4.0))\n    which includes updated icons.\n",
+    "date": "June 7, 2025",
+    "version": "2.0.0-next.0"
+  },
+  {
     "id": 259,
     "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/259",
     "body": "---\ntitle: Version 1.0.1\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 1.0.1. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/259\nreleaseDate: March 2, 2025\nversion: 1.0.1\n---\n\n\n\n## storybook-addon-data-theme-switcher@1.0.1\n\n### Patch Changes\n\n-   [#258](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/258) [`4225ed7`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/4225ed738c852e83a9eeebe1e3a73749d1bbca44) Thanks [@paulbuechner](https://github.com/paulbuechner)! - chore(deps): support react 19 in peer deps\n",
