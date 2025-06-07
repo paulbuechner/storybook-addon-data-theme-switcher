@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "storybook-addon-data-theme-switcher": "1.0.1"
+  },
+  "changesets": []
+}

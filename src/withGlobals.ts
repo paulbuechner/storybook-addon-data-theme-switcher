@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useEffect, useGlobals } from "@storybook/preview-api";
+import { useEffect, useGlobals } from "storybook/preview-api";
 import type {
   Renderer,
   PartialStoryFn as StoryFunction,
-} from "@storybook/types";
+} from "storybook/internal/types";
 
 import { DATA_THEME_KEY, DATA_THEMES_KEY } from "@/constants";
 
