@@ -36,7 +36,7 @@ This comes in handy if you want to test your components with different themes.
 
 ## Compatibility
 
-This addon is compatible with storybook version `^8.3.x`.
+This addon is compatible with storybook version `^9.0.x || ^8.3.x`.
 
 > **NOTE**: For storybook versions below `8.3.x` use [
 `storybook-addon-data-theme-switcher@0.4.2`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/releases/tag/v0.4.2).
