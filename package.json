@@ -91,7 +91,7 @@
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
-    "@vitejs/plugin-react": "^4.5.1",
+    "@vitejs/plugin-react": "^5.0.0",
     "edit-json-file": "^1.8.1",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
