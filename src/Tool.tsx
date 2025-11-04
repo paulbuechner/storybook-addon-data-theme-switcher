@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import type { ElementType } from "react";
 import { useGlobals } from "storybook/manager-api";
 import {
@@ -98,10 +98,6 @@ const getDisplayableState = memoize(10)((
 });
 
 export const DataThemeSelector = () => {
-  const [themeConfig, setThemeConfig] = useState<ThemeConfig>({
-    list: [],
-  });
-
   const [themeToolState, setThemeToolState] = useState<ThemeToolState>({
     selected: undefined,
     expanded: false,
@@ -110,9 +106,10 @@ export const DataThemeSelector = () => {
   const [{ dataTheme, dataThemes: themes }, updateThemeGlobals] =
     useGlobals() as unknown as [ThemeGlobals, UpdateThemeGlobalsFn];
 
-  useEffect(() => {
-    setThemeConfig({ default: dataTheme, ...themes });
-  }, [dataTheme, themes, setThemeConfig]);
+  const themeConfig: ThemeConfig = useMemo(
+    () => ({ default: dataTheme, ...themes }),
+    [dataTheme, themes]
+  );
 
   // Handle item click and update the global state
   const change = useCallback(

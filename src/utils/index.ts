@@ -6,9 +6,7 @@ const defaultOptions: ThemeConfig = {
 };
 
 export function getConfig(parameters: ThemeConfig | Theme[]): ThemeConfig {
-  const options =
-    parameters instanceof Array ? { list: parameters } : parameters;
-
+  const options = Array.isArray(parameters) ? { list: parameters } : parameters;
   return {
     ...defaultOptions,
     ...options,
@@ -30,12 +28,12 @@ export function getSelectedThemeName(
 
   if (
     currentSelectedValue &&
-    list.find((i) => i.name === currentSelectedValue)
+    list.some((i) => i.name === currentSelectedValue)
   ) {
     return currentSelectedValue;
   }
 
-  if (defaultTheme && list.find((i) => i.dataTheme === defaultTheme)) {
+  if (defaultTheme && list.some((i) => i.dataTheme === defaultTheme)) {
     return list.find((i) => i.dataTheme === defaultTheme)?.name ?? "none";
   }
 
@@ -43,7 +41,7 @@ export function getSelectedThemeName(
     return defaultTheme;
   }
 
-  if (list.find((i) => i.default)) {
+  if (list.some((i) => i.default)) {
     return list.find((i) => i.default)?.name ?? "none";
   }
 
