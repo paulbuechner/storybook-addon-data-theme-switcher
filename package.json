@@ -89,7 +89,7 @@
     "@tailwindcss/postcss": "^4.1.16",
     "@types/edit-json-file": "^1.7.4",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.19.0",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.2.2",
     "@vitejs/plugin-react": "^5.1.0",
     "edit-json-file": "^1.8.1",
