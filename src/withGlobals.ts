@@ -16,10 +16,10 @@ export const withGlobals = (StoryFn: StoryFunction<Renderer>) => {
   useEffect(() => {
     if (dataTheme === "none") {
       document.documentElement.removeAttribute(dataAttribute);
-      window.localStorage.removeItem(dataAttribute);
+      globalThis.localStorage.removeItem(dataAttribute);
     } else {
       document.documentElement.setAttribute(dataAttribute, dataTheme);
-      window.localStorage.setItem(dataAttribute, dataTheme);
+      globalThis.localStorage.setItem(dataAttribute, dataTheme);
     }
   }, [dataAttribute, dataTheme, updateGlobals]);
 
