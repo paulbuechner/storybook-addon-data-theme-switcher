@@ -1,23 +1,26 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "strict": true,
-    "incremental": false,
-    "isolatedModules": true,
-    "jsx": "react",
-    "lib": ["es2020", "dom"],
-    "noImplicitAny": true,
-    "moduleResolution": "Bundler",
-    "module": "es2020",
     "skipLibCheck": true,
-    "target": "ES2020",
+    "target": "esnext", // Node 20 according to https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping#node-20
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "module": "preserve",
+    "jsx": "react",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noImplicitAny": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "@/*": ["./src/*"],
-    },
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*", "tsup.config.ts"]
 }
