@@ -7,6 +7,13 @@
     "version": "3.0.0-next.0"
   },
   {
+    "id": 371,
+    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/371",
+    "body": "---\ntitle: Version 3.0.0-next.0\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 3.0.0-next.0. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/371\nreleaseDate: November 5, 2025\nversion: 3.0.0-next.0\n---\n\n\n\n## storybook-addon-data-theme-switcher@3.0.0-next.0\n\n### Major Changes\n\n-   [#370](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/370) [`dee6fad`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/dee6fade22775f2334d427bd7924725e9c4628bf) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Update addon for storybook v10:\n    -   Drop support for Storybook v8.3, and v9 (requires Storybook v10).\n    -   As of v10 Storybook now requires addons to target [ESM only](https://storybook.js.org/docs/addons/addon-migration-guide#esm-only-builds).\n        Therefore, this release targets ESM only and drops support for CommonJS.\n    -   Node requirements updated to Node 20.19 or higher.\n",
+    "date": "November 5, 2025",
+    "version": "3.0.0-next.0"
+  },
+  {
     "id": 369,
     "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/369",
     "body": "---\ntitle: Version 2.0.2\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 2.0.2. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/369\nreleaseDate: November 5, 2025\nversion: 2.0.2\n---\n\n\n\n## storybook-addon-data-theme-switcher@2.0.2\n\n### Patch Changes\n\n-   [#368](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/368) [`525dc3c`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/525dc3c45368a8cfb7aea9f4c7098b139b555345) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Set node version requirement to v20.\n",
