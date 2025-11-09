@@ -1,9 +1,9 @@
 {
   "name": "storybook-addon-data-theme-switcher",
-  "version": "2.0.2",
+  "version": "3.0.0-next.1",
   "description": "A Storybook addon to switch the data-theme attribute on the html element",
   "keywords": [
-    "storybook-addons",
+    "storybook-addon",
     "storybook-addon-theme",
     "storybook-addon-data-theme-switcher",
     "storybook-addon-theme-switcher",
@@ -26,31 +26,21 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
     },
     "./preview": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/preview.js",
-      "require": "./dist/preview.cjs"
+      "types": "./dist/preview.d.ts",
+      "default": "./dist/preview.js"
     },
-    "./types": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/types.js",
-      "require": "./dist/types.cjs"
-    },
-    "./preset": "./dist/preset.cjs",
+    "./preset": "./dist/preset.js",
     "./manager": "./dist/manager.js",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
-    "manager.js",
-    "preview.js",
+    "*.js",
     "*.d.ts"
   ],
   "scripts": {
@@ -84,8 +74,8 @@
     "@commitlint/config-conventional": "^20.0.0",
     "@eslint/js": "^9.39.1",
     "@octokit/rest": "^22.0.1",
-    "@storybook/addon-links": "^9.1.16",
-    "@storybook/react-vite": "^9.1.16",
+    "@storybook/addon-docs": ">=10.0.0-0 <11.0.0-0",
+    "@storybook/react-vite": ">=10.0.0-0 <11.0.0-0",
     "@tailwindcss/postcss": "^4.1.16",
     "@types/edit-json-file": "^1.7.4",
     "@types/eslint": "^9.6.1",
@@ -101,7 +91,7 @@
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
-    "eslint-plugin-storybook": "^9.1.16",
+    "eslint-plugin-storybook": ">=10.0.0-0 <11.0.0-0",
     "global": "^4.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
@@ -115,7 +105,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "rimraf": "^6.1.0",
-    "storybook": "^9.1.16",
+    "storybook": ">=10.0.0-0 <11.0.0-0",
     "tailwindcss": "^4.1.16",
     "tsup": "^8.5.0",
     "tsx": "^4.20.6",
@@ -126,7 +116,7 @@
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-    "storybook": "^9.0.0"
+    "storybook": "^10.0.0"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -138,21 +128,22 @@
   },
   "packageManager": "pnpm@10.20.0",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=20.19.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "bundler": {
-    "exportEntries": [
-      "src/preset/index.ts",
-      "src/preset/types.ts"
-    ],
     "managerEntries": [
       "src/preset/manager.ts"
     ],
     "previewEntries": [
-      "src/preset/preview.ts"
+      "src/preset/preview.ts",
+      "src/preset/index.ts"
+    ],
+    "nodeEntries": [
+      "src/preset/index.ts",
+      "src/preset/types.ts"
     ]
   },
   "storybook": {

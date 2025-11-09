@@ -7,6 +7,7 @@ on:
       - 'src/**'
     branches:
       - main
+      - next
   workflow_dispatch:
 
 concurrency:

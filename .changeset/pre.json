@@ -1,0 +1,11 @@
+{
+  "mode": "exit",
+  "tag": "next",
+  "initialVersions": {
+    "storybook-addon-data-theme-switcher": "2.0.2"
+  },
+  "changesets": [
+    "five-wolves-lose",
+    "open-readers-hug"
+  ]
+}

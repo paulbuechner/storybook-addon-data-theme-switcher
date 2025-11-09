@@ -1,6 +1,6 @@
-import { addons, types } from "storybook/internal/manager-api";
+import { addons, types } from "storybook/manager-api";
 
-import { ADDON_ID, TOOL_ID } from "@/constants";
+import { ADDON_ID, TAB_ID, TOOL_ID } from "@/constants";
 import { DataThemeSelector } from "@/Tool";
 
 addons.register(ADDON_ID, () => {
@@ -8,7 +8,8 @@ addons.register(ADDON_ID, () => {
   addons.add(TOOL_ID, {
     title: "Data Theme Switcher",
     type: types.TOOL,
-    match: ({ viewMode }) => !!viewMode?.match(/^(story|docs)$/),
+    match: ({ viewMode, tabId }) =>
+      !!(viewMode?.match(/^(story|docs)$/) || tabId === TAB_ID),
     render: DataThemeSelector,
   });
 });
