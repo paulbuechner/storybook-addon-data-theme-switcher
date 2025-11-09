@@ -1,5 +1,12 @@
 [
   {
+    "id": 377,
+    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/377",
+    "body": "---\ntitle: Version 3.0.0\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 3.0.0. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/377\nreleaseDate: November 9, 2025\nversion: 3.0.0\n---\n\n\n\n## storybook-addon-data-theme-switcher@3.0.0\n\n### Major Changes\n\n-   [#375](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/375) [`19a1ba2`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/19a1ba2eb1b73a5da73208aefb7d06fb3dfc6154) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Update addon for storybook v10:\n    -   Drop support for Storybook v8.3, and v9 (requires Storybook v10).\n    -   As of v10 Storybook now requires addons to target [ESM only](https://storybook.js.org/docs/addons/addon-migration-guide#esm-only-builds).\n        Therefore, this release targets ESM only and drops support for CommonJS.\n    -   Node requirements updated to Node 20.19 or higher.\n",
+    "date": "November 9, 2025",
+    "version": "3.0.0"
+  },
+  {
     "id": 371,
     "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/371",
     "body": "---\ntitle: Version 3.0.0-next.0\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 3.0.0-next.0. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/371\nreleaseDate: November 5, 2025\nversion: 3.0.0-next.0\n---\n\n\n\n## storybook-addon-data-theme-switcher@3.0.0-next.0\n\n### Major Changes\n\n-   [#370](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/370) [`dee6fad`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/dee6fade22775f2334d427bd7924725e9c4628bf) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Update addon for storybook v10:\n    -   Drop support for Storybook v8.3, and v9 (requires Storybook v10).\n    -   As of v10 Storybook now requires addons to target [ESM only](https://storybook.js.org/docs/addons/addon-migration-guide#esm-only-builds).\n        Therefore, this release targets ESM only and drops support for CommonJS.\n    -   Node requirements updated to Node 20.19 or higher.\n",
