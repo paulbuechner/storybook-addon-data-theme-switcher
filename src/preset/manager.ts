@@ -9,7 +9,7 @@ addons.register(ADDON_ID, () => {
     title: "Data Theme Switcher",
     type: types.TOOL,
     match: ({ viewMode, tabId }) =>
-      !!(viewMode?.match(/^(story)$/) || tabId === TAB_ID),
+      !!(viewMode?.match(/^(story|docs)$/) || tabId === TAB_ID),
     render: DataThemeSelector,
   });
 });
