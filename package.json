@@ -63,7 +63,7 @@
     "version": "changeset version"
   },
   "dependencies": {
-    "@storybook/icons": "^1.6.0"
+    "@storybook/icons": "^2.0.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
