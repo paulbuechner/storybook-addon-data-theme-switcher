@@ -80,7 +80,7 @@ importers:
         version: 6.10.2(eslint@10.0.0(jiti@2.6.1))
       eslint-plugin-only-warn:
         specifier: ^1.1.0
-        version: 1.1.0
+        version: 1.2.1
       eslint-plugin-react:
         specifier: ^7.37.5
         version: 7.37.5(eslint@10.0.0(jiti@2.6.1))
@@ -2254,9 +2254,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-only-warn@1.1.0:
-    resolution: {integrity: sha512-2tktqUAT+Q3hCAU0iSf4xAN1k9zOpjK5WO8104mB0rT/dGhOa09582HN5HlbxNbPRZ0THV7nLGvzugcNOSjzfA==}
-    engines: {node: '>=6'}
+  eslint-plugin-only-warn@1.2.1:
+    resolution: {integrity: sha512-j37hwfaQDEOfkZ1Dpvu/HnWLavlzQxQxfbrU/9Jb4R9qzrE1eTYuRJyrxq7LzLRI8miG5FOV6veoUVhx7AI84w==}
 
   eslint-plugin-react-hooks@7.0.0:
     resolution: {integrity: sha512-fNXaOwvKwq2+pXiRpXc825Vd63+KM4DLL40Rtlycb8m7fYpp6efrTp1sa6ZbP/Ap58K2bEKFXRmhURE+CJAQWw==}
@@ -6201,7 +6200,7 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-only-warn@1.1.0: {}
+  eslint-plugin-only-warn@1.2.1: {}
 
   eslint-plugin-react-hooks@7.0.0(eslint@10.0.0(jiti@2.6.1)):
     dependencies:
