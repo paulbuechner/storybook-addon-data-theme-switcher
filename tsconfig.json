@@ -9,18 +9,15 @@
     "moduleResolution": "bundler",
     "module": "preserve",
     "jsx": "react",
-    "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noImplicitAny": true,
     "lib": ["esnext", "dom", "dom.iterable"],
-    "baseUrl": ".",
-    "rootDir": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", ".storybook/**/*", "tsup.config.ts"]
+  "include": ["src/**/*", ".storybook/**/*", "tsdown.config.ts"]
 }
