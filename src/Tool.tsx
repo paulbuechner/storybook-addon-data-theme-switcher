@@ -6,102 +6,21 @@ import {
   TooltipLinkList,
   WithTooltip,
 } from "storybook/internal/components";
-import memoize from "memoizerific";
 import * as Icon from "@storybook/icons";
 
 import { DATA_THEME_KEY, TOOL_ID } from "@/constants";
 import { getConfig, getSelectedTheme, getSelectedThemeName } from "@/utils";
 import { ColorIcon } from "@/components";
 import type {
-  Theme,
   ThemeConfig,
   ThemeGlobals,
   ThemeSelectorItem,
   UpdateThemeGlobalsFn,
 } from "@/types";
 
-interface ThemeToolState {
-  selected: string | undefined;
-  expanded: boolean;
-}
-
-const createThemeSelectorItem = memoize(1000)(
-  (
-    id: string,
-    title: string,
-    color: string,
-    hasSwatch: boolean,
-    change: (arg: { selected: string; expanded: boolean }) => void,
-    active: boolean
-  ): ThemeSelectorItem => ({
-    id,
-    title,
-    onClick: () => {
-      change({ selected: id, expanded: false });
-    },
-    value: id,
-    right: hasSwatch ? <ColorIcon background={color} /> : undefined,
-    active,
-  })
-);
-
-const getDisplayableState = memoize(10)((
-  props: ThemeConfig,
-  state: ThemeToolState,
-  change: (arg: { selected: string; expanded: boolean }) => void
-) => {
-  const { clearable, list, default: defaultTheme } = getConfig(props);
-
-  const selectedThemeName = getSelectedThemeName(
-    list,
-    defaultTheme,
-    state.selected
-  );
-
-  let availableThemeSelectorItems: ThemeSelectorItem[] = [];
-  let selectedTheme: Theme | undefined;
-
-  if (selectedThemeName !== "none" && clearable) {
-    availableThemeSelectorItems.push(
-      createThemeSelectorItem(
-        "none",
-        "Clear data-theme",
-        "transparent",
-        false,
-        change,
-        false
-      )
-    );
-  }
-
-  if (list.length) {
-    availableThemeSelectorItems = [
-      ...availableThemeSelectorItems,
-      ...list.map(({ dataTheme, color, name }) =>
-        createThemeSelectorItem(
-          name ?? dataTheme,
-          name ?? dataTheme,
-          color ?? "transparent",
-          true,
-          change,
-          name === selectedThemeName
-        )
-      ),
-    ];
-    selectedTheme = getSelectedTheme(list, selectedThemeName);
-  }
-
-  return {
-    items: availableThemeSelectorItems,
-    selectedTheme,
-  };
-});
-
 export const DataThemeSelector = () => {
-  const [themeToolState, setThemeToolState] = useState<ThemeToolState>({
-    selected: undefined,
-    expanded: false,
-  });
+  const [selected, setSelected] = useState<string | undefined>(undefined);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [{ dataTheme, dataThemes: themes }, updateThemeGlobals] =
     useGlobals() as unknown as [ThemeGlobals, UpdateThemeGlobalsFn];
@@ -111,18 +30,16 @@ export const DataThemeSelector = () => {
     [dataTheme, themes]
   );
 
-  // Handle item click and update the global state
   const change = useCallback(
-    (args: { selected: string; expanded: boolean }) => {
-      setThemeToolState(args);
+    (newSelected: string) => {
+      setSelected(newSelected);
 
-      const { list } = getConfig(themeConfig);
-      const selectedTheme = getSelectedTheme(list, args.selected);
+      const { list, onChange } = getConfig(themeConfig);
+      const selectedTheme = getSelectedTheme(list, newSelected);
       updateThemeGlobals({
         [DATA_THEME_KEY]: selectedTheme?.dataTheme ?? "none",
       });
 
-      const { onChange } = getConfig(themeConfig);
       if (typeof onChange === "function") {
         onChange(selectedTheme);
       }
@@ -130,17 +47,56 @@ export const DataThemeSelector = () => {
     [themeConfig, updateThemeGlobals]
   );
 
-  const { items, selectedTheme } = useMemo(
-    () => getDisplayableState(themeConfig, themeToolState, change),
-    [themeConfig, themeToolState, change]
-  );
+  const { items, selectedTheme } = useMemo(() => {
+    const { clearable, list, default: defaultTheme } = getConfig(themeConfig);
+    const selectedThemeName = getSelectedThemeName(
+      list,
+      defaultTheme,
+      selected
+    );
+
+    const selectorItems: ThemeSelectorItem[] = [];
+
+    if (selectedThemeName !== "none" && clearable) {
+      selectorItems.push({
+        id: "none",
+        title: "Clear data-theme",
+        onClick: () => change("none"),
+        value: "none",
+        active: false,
+      });
+    }
+
+    if (list.length) {
+      for (const { dataTheme, color, name } of list) {
+        const id = name ?? dataTheme;
+        selectorItems.push({
+          id,
+          title: id,
+          onClick: () => change(id),
+          value: id,
+          right: <ColorIcon background={color ?? "transparent"} />,
+          active: name === selectedThemeName,
+        });
+      }
+    }
+
+    return {
+      items: selectorItems,
+      selectedTheme: getSelectedTheme(list, selectedThemeName),
+    };
+  }, [themeConfig, selected, change]);
 
   const iconKey = themeConfig.toolbar?.icon ?? "PaintBrushIcon";
 
-  const ThemeConfigIcon = Icon[
-    // eslint-disable-next-line import/namespace
-    iconKey as keyof typeof Icon
-  ] as never as ElementType;
+  const ThemeConfigIcon = useMemo(
+    () =>
+      Icon[
+        // eslint-disable-next-line import/namespace
+        iconKey as keyof typeof Icon
+      ] as never as ElementType,
+    [iconKey]
+  );
 
   return themeConfig.list && themeConfig.list.length > 0 ? (
     <WithTooltip
@@ -148,12 +104,7 @@ export const DataThemeSelector = () => {
       placement="top"
       trigger="click"
       closeOnOutsideClick
-      onVisibleChange={(visible) =>
-        setThemeToolState((prevState) => ({
-          ...prevState,
-          expanded: visible,
-        }))
-      }
+      onVisibleChange={setIsOpen}
       tooltip={({ onHide }) => (
         <TooltipLinkList
           links={items.map((item) => ({
@@ -171,7 +122,7 @@ export const DataThemeSelector = () => {
         active={selectedTheme !== undefined}
         key={TOOL_ID}
         tooltip={themeConfig.toolbar?.title ?? "Change data-theme attribute"}
-        disableAllTooltips={themeToolState.expanded}
+        disableAllTooltips={isOpen}
       >
         <ThemeConfigIcon />
         {selectedTheme ? ` ${selectedTheme.name}` : null}
