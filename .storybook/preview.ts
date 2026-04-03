@@ -21,6 +21,9 @@ const preview = {
   },
   initialGlobals: {
     backgrounds: "dark",
+    /**
+     * storybook-addon-data-theme-switcher configuration for Storybook.
+     */
     dataTheme: "rainforest",
     dataThemes: {
       list: [
