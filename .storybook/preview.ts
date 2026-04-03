@@ -6,13 +6,16 @@ import "../styles/globals.css";
 
 const preview = {
   parameters: {
-    backgrounds: {
-      default: "light",
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
+      },
+    },
+    backgrounds: {
+      options: {
+        light: { name: "Light", value: "#f5f5f0" },
+        dark: { name: "Dark", value: "#1a1a1a" },
       },
     },
   },
