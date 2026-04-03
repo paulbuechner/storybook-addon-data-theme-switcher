@@ -147,19 +147,31 @@ export const DataThemeSelector = () => {
       key={TOOL_ID}
       placement="top"
       trigger="click"
-      visible={themeToolState.expanded}
-      tooltip={<TooltipLinkList links={items} />}
+      closeOnOutsideClick
+      onVisibleChange={(visible) =>
+        setThemeToolState((prevState) => ({
+          ...prevState,
+          expanded: visible,
+        }))
+      }
+      tooltip={({ onHide }) => (
+        <TooltipLinkList
+          links={items.map((item) => ({
+            ...item,
+            onClick: () => {
+              item.onClick();
+              onHide();
+            },
+          }))}
+        />
+      )}
     >
       <IconButton
+        variant="ghost"
         active={selectedTheme !== undefined}
         key={TOOL_ID}
-        title={themeConfig.toolbar?.title ?? "Change data-theme attribute"}
-        onClick={() =>
-          setThemeToolState((prevState) => ({
-            ...prevState,
-            expanded: !prevState.expanded,
-          }))
-        }
+        tooltip={themeConfig.toolbar?.title ?? "Change data-theme attribute"}
+        disableAllTooltips={themeToolState.expanded}
       >
         <ThemeConfigIcon />
       </IconButton>
