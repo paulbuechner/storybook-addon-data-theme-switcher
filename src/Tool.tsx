@@ -174,6 +174,7 @@ export const DataThemeSelector = () => {
         disableAllTooltips={themeToolState.expanded}
       >
         <ThemeConfigIcon />
+        {selectedTheme ? ` ${selectedTheme.name}` : null}
       </IconButton>
     </WithTooltip>
   ) : null;
