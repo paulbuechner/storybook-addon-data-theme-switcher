@@ -20,6 +20,7 @@ const preview = {
     },
   },
   initialGlobals: {
+    backgrounds: "dark",
     dataTheme: "rainforest",
     dataThemes: {
       list: [
