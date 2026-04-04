@@ -55,7 +55,7 @@
     "gen:icon-names": "tsx scripts/generate-icon-names.ts",
     "lint": "eslint src/ .storybook/",
     "lint:fix": "eslint src/ .storybook/ --fix",
-    "release": "changeset publish",
+    "release": "changeset publish --provenance",
     "start": "run-p build:watch \"storybook --quiet\"",
     "storybook": "storybook dev -p 6006",
     "test": "vitest run",
