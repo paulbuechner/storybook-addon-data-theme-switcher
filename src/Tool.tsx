@@ -2,10 +2,11 @@ import React, { useCallback, useMemo, useState } from "react";
 import type { ElementType } from "react";
 import { useGlobals } from "storybook/manager-api";
 import {
+  ActionList,
+  PopoverProvider,
   ToggleButton,
-  TooltipLinkList,
-  WithTooltip,
 } from "storybook/internal/components";
+import { styled } from "storybook/theming";
 import * as Icon from "@storybook/icons";
 
 import { DATA_THEME_KEY, TOOL_ID } from "@/constants";
@@ -17,6 +18,42 @@ import type {
   ThemeSelectorItem,
   UpdateThemeGlobalsFn,
 } from "@/types";
+
+const MenuButton = styled(ActionList.Button)(({ theme }) => ({
+  width: "100%",
+  fontWeight: theme.typography.weight.regular,
+  color: theme.color.defaultText,
+  justifyContent: "flex-start",
+}));
+
+const MenuText = styled(ActionList.Text)({
+  flexGrow: 0,
+});
+
+const ThemeMenu = ({
+  items,
+  onHide,
+}: {
+  items: ThemeSelectorItem[];
+  onHide: () => void;
+}) => (
+  <ActionList style={{ minWidth: 180 }}>
+    {items.map((item) => (
+      <ActionList.Item key={item.id} active={item.active}>
+        <MenuButton
+          ariaLabel={false}
+          onClick={() => {
+            item.onClick();
+            onHide();
+          }}
+        >
+          {item.left && <ActionList.Icon>{item.left}</ActionList.Icon>}
+          <MenuText>{item.title}</MenuText>
+        </MenuButton>
+      </ActionList.Item>
+    ))}
+  </ActionList>
+);
 
 export const DataThemeSelector = () => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
@@ -63,6 +100,7 @@ export const DataThemeSelector = () => {
         title: "Clear data-theme",
         onClick: () => change("none"),
         value: "none",
+        left: <Icon.UndoIcon />,
         active: false,
       });
     }
@@ -75,7 +113,7 @@ export const DataThemeSelector = () => {
           title: id,
           onClick: () => change(id),
           value: id,
-          right: <ColorIcon background={color ?? "transparent"} />,
+          left: <ColorIcon background={color ?? "transparent"} />,
           active: name === selectedThemeName,
         });
       }
@@ -99,23 +137,12 @@ export const DataThemeSelector = () => {
   );
 
   return themeConfig.list && themeConfig.list.length > 0 ? (
-    <WithTooltip
-      key={TOOL_ID}
-      placement="top"
-      trigger="click"
-      closeOnOutsideClick
+    <PopoverProvider
+      ariaLabel="Theme selector"
+      placement="top-start"
+      padding={0}
       onVisibleChange={setIsOpen}
-      tooltip={({ onHide }) => (
-        <TooltipLinkList
-          links={items.map((item) => ({
-            ...item,
-            onClick: () => {
-              item.onClick();
-              onHide();
-            },
-          }))}
-        />
-      )}
+      popover={({ onHide }) => <ThemeMenu items={items} onHide={onHide} />}
     >
       <ToggleButton
         variant="ghost"
@@ -128,6 +155,6 @@ export const DataThemeSelector = () => {
         <ThemeConfigIcon />
         {selectedTheme ? ` ${selectedTheme.name}` : null}
       </ToggleButton>
-    </WithTooltip>
+    </PopoverProvider>
   ) : null;
 };

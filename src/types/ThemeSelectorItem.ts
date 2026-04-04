@@ -5,6 +5,6 @@ export interface ThemeSelectorItem {
   title: string;
   onClick: () => void;
   value: string;
-  right?: React.ReactNode;
+  left?: React.ReactNode;
   active: boolean;
 }

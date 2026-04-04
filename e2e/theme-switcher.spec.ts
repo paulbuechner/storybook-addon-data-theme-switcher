@@ -5,9 +5,9 @@ function addonButton(page: Page) {
   return page.locator('[aria-label="Change data-theme attribute"]');
 }
 
-/** The dropdown tooltip that appears when clicking the addon button. */
+/** The popover dropdown that appears when clicking the addon button. */
 function dropdown(page: Page) {
-  return page.getByTestId("tooltip");
+  return page.locator('[aria-label="Theme selector"]');
 }
 
 /** The story button rendered inside the preview iframe. */

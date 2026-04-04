@@ -2,10 +2,11 @@ import { styled } from "storybook/theming";
 
 export const ColorIcon = styled.span(
   ({ background }: { background: string }) => ({
-    borderRadius: "1rem",
+    borderRadius: "50%",
     display: "block",
-    height: "1rem",
-    width: "1rem",
+    height: 14,
+    width: 14,
+    flexShrink: 0,
     background,
   }),
   ({ theme }) => ({
