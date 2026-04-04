@@ -1,4 +1,4 @@
-import { test, expect, type Page } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
 
 /** The addon toolbar button. */
 function addonButton(page: Page) {
@@ -33,9 +33,23 @@ test.describe("Data Theme Switcher Addon", () => {
       .locator(".sb-show-main")
       .waitFor();
 
-    // Set a known initial state via the toolbar since the story's play
-    // function may have altered the data-theme attribute
     await selectTheme(page, "Rainforest");
+  });
+
+  test("initial dataTheme from initialGlobals is applied on load", async ({
+    page,
+  }) => {
+    // Navigate without globals in the URL and without any toolbar interaction
+    await page.goto("/?path=/story/stories-button--data-theme-switcher");
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+    await iframe.locator(".sb-show-main").waitFor();
+
+    // Assert — the initial dataTheme from .storybook/preview.ts should be applied
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-theme",
+      "rainforest"
+    );
+    await expect(addonButton(page)).toContainText("Rainforest");
   });
 
   test("toolbar button is visible and shows active theme name", async ({
@@ -74,10 +88,7 @@ test.describe("Data Theme Switcher Addon", () => {
     await selectTheme(page, "Candy");
 
     // Assert — theme switched
-    await expect(iframe.locator("html")).toHaveAttribute(
-      "data-theme",
-      "candy"
-    );
+    await expect(iframe.locator("html")).toHaveAttribute("data-theme", "candy");
     await expect(addonButton(page)).toContainText("Candy");
   });
 
@@ -95,19 +106,13 @@ test.describe("Data Theme Switcher Addon", () => {
     await selectTheme(page, "Candy");
 
     // Assert
-    await expect(iframe.locator("html")).toHaveAttribute(
-      "data-theme",
-      "candy"
-    );
+    await expect(iframe.locator("html")).toHaveAttribute("data-theme", "candy");
 
     // Act — switch to "Rose"
     await selectTheme(page, "Rose");
 
     // Assert
-    await expect(iframe.locator("html")).toHaveAttribute(
-      "data-theme",
-      "rose"
-    );
+    await expect(iframe.locator("html")).toHaveAttribute("data-theme", "rose");
 
     // Act — clear the theme
     await addonButton(page).click();
