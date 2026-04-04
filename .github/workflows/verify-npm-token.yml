@@ -1,0 +1,24 @@
+name: Verify NPM Token
+
+on:
+  pull_request:
+    branches:
+      - main
+      - next
+
+jobs:
+  verify-token:
+    name: Verify NPM Token
+    if: startsWith(github.head_ref, 'changeset-release/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify NPM token is valid
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer ${NPM_TOKEN}" https://registry.npmjs.org/-/npm/v1/user)
+          if [ "$response" != "200" ]; then
+            echo "::error::NPM token is invalid or expired (HTTP $response). Please update the NPM_TOKEN secret before merging."
+            exit 1
+          fi
+          echo "NPM token is valid."
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
