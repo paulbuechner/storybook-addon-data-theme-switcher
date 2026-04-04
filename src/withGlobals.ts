@@ -11,9 +11,10 @@ export const withGlobals = (StoryFn: StoryFunction<Renderer>) => {
   const [globals] = useGlobals();
 
   const dataTheme = globals[DATA_THEME_KEY];
-  const dataAttribute = globals[DATA_THEMES_KEY].dataAttribute || "data-theme";
+  const dataAttribute =
+    globals[DATA_THEMES_KEY]?.dataAttribute || "data-theme";
 
-  if (dataTheme === "none") {
+  if (!dataTheme || dataTheme === "none") {
     document.documentElement.removeAttribute(dataAttribute);
     globalThis.localStorage.removeItem(dataAttribute);
   } else {
