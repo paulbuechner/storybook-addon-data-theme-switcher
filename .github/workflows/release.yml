@@ -3,12 +3,17 @@ name: Release
 on:
   push:
     paths:
-      - '.changeset/**'
-      - 'src/**'
+      - ".changeset/**"
+      - "src/**"
     branches:
       - main
       - next
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,8 +29,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
-          node-version-file: '.nvmrc'
-          registry-url: 'https://registry.npmjs.org'
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
 
       - uses: pnpm/action-setup@v5
         name: Install pnpm
@@ -64,10 +69,8 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: pnpm release
-          commit: 'ci(changesets): version packages'
+          commit: "ci(changesets): version packages"
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update changelog
