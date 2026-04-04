@@ -145,7 +145,6 @@ export const DataThemeSelector = () => {
       popover={({ onHide }) => <ThemeMenu items={items} onHide={onHide} />}
     >
       <ToggleButton
-        variant="ghost"
         pressed={selectedTheme !== undefined}
         key={TOOL_ID}
         ariaLabel="Change data-theme attribute"
