@@ -6,7 +6,6 @@
   },
   "changesets": [
     "fix-decorator-sync",
-    "fix-toolbar-button",
     "fix-toolbar-tooltip",
     "prep-storybook-v11",
     "show-selected-theme-name",

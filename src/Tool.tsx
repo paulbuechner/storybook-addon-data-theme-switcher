@@ -128,9 +128,15 @@ export const DataThemeSelector = () => {
   const iconKey = themeConfig.toolbar?.icon ?? "PaintBrushIcon";
 
   const ThemeConfigIcon = useMemo(
-    () =>
-      Icon[iconKey as keyof typeof Icon] as never as ElementType,
+    () => Icon[iconKey as keyof typeof Icon] as never as ElementType,
     [iconKey]
+  );
+
+  const renderPopover = useCallback(
+    (props: { onHide: () => void }) => (
+      <ThemeMenu items={items} onHide={props.onHide} />
+    ),
+    [items]
   );
 
   return themeConfig.list && themeConfig.list.length > 0 ? (
@@ -139,9 +145,10 @@ export const DataThemeSelector = () => {
       placement="top-start"
       padding={0}
       onVisibleChange={setIsOpen}
-      popover={({ onHide }) => <ThemeMenu items={items} onHide={onHide} />}
+      popover={renderPopover}
     >
       <ToggleButton
+        variant={"ghost"}
         pressed={selectedTheme !== undefined}
         key={TOOL_ID}
         ariaLabel="Change data-theme attribute"
