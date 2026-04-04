@@ -1,4 +1,5 @@
-// @ts-expect-error generated as part of "prebuild" script
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore generated as part of "prebuild" script
 import type { IconName } from "@/generated/types";
 
 import type { Theme } from "./Theme";
