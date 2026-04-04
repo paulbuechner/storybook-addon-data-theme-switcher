@@ -40,8 +40,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Lint
+        run: pnpm lint
+
       - name: Build addon
         run: pnpm build
 
-      # - name: Test addon
-      #   run: pnpm test
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install chromium --with-deps
+
+      - name: Test addon
+        run: pnpm test
+
+      - name: E2E tests
+        run: pnpm test:e2e
