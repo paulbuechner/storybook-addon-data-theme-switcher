@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import type { ElementType } from "react";
 import { useGlobals } from "storybook/manager-api";
 import {
-  IconButton,
+  ToggleButton,
   TooltipLinkList,
   WithTooltip,
 } from "storybook/internal/components";
@@ -117,16 +117,17 @@ export const DataThemeSelector = () => {
         />
       )}
     >
-      <IconButton
+      <ToggleButton
         variant="ghost"
-        active={selectedTheme !== undefined}
+        pressed={selectedTheme !== undefined}
         key={TOOL_ID}
+        ariaLabel="Change data-theme attribute"
         tooltip={themeConfig.toolbar?.title ?? "Change data-theme attribute"}
         disableAllTooltips={isOpen}
       >
         <ThemeConfigIcon />
         {selectedTheme ? ` ${selectedTheme.name}` : null}
-      </IconButton>
+      </ToggleButton>
     </WithTooltip>
   ) : null;
 };
