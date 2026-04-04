@@ -17,7 +17,7 @@ export default defineConfig(async () => {
   ).default;
 
   const {
-    // @ts-ignore storybook-addon-data-theme-switcher does not make use of presets (node entries removed from package.json)
+    // @ts-expect-error storybook-addon-data-theme-switcher does not make use of presets (node entries removed from package.json)
     bundler: { managerEntries = [], previewEntries = [], nodeEntries = [] },
   } = packageJson;
 
