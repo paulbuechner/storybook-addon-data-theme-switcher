@@ -4,6 +4,6 @@
 
 fix: toolbar tooltip and dropdown closing
 
-- Use `tooltip` prop instead of `title` for the hover tooltip
+- Fix show tooltip on hover
 - Fix dropdown not closing when selecting a theme
 - Dismiss the dropdown when clicking outside
