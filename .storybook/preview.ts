@@ -20,7 +20,7 @@ const preview = {
     },
   },
   initialGlobals: {
-    backgrounds: "dark",
+    backgrounds: "light",
     /**
      * storybook-addon-data-theme-switcher configuration for Storybook.
      */
