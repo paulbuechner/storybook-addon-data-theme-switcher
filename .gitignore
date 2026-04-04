@@ -1,10 +1,36 @@
-dist/
-node_modules/
-storybook-static/
-build-storybook.log
-.DS_Store
-.env
-**/generated/
+node_modules
+*.log
+.idea
+*.iml
+*.sw*
+!.swcrc
+dist
+*.DS_Store
+.cache
+test-results
+/.npmrc
 
-# IDE
-.idea/
+.env
+.env.local
+
+package-lock.json
+storybook-static
+tsconfig.tsbuildinfo
+
+test-results/
+playwright-results/
+playwright-report/
+playwright/.cache/
+bench-results/
+
+*storybook.log
+
+.junie
+CLAUDE.local.md
+.claude
+.cursor/mcp.json
+.vscode/mcp.json
+.mcp.json
+
+# storybook-addon-data-theme-switcher
+**/generated/

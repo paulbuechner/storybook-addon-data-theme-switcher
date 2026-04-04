@@ -2,21 +2,28 @@ import type { Preview } from "@storybook/react-vite";
 
 import type { ThemeConfig } from "@/preset/types";
 
-import "../styles/globals.css";
+import "../src/styles/globals.css";
 
 const preview = {
   parameters: {
-    backgrounds: {
-      default: "light",
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
       },
     },
+    backgrounds: {
+      options: {
+        light: { name: "Light", value: "#f5f5f0" },
+        dark: { name: "Dark", value: "#1a1a1a" },
+      },
+    },
   },
   initialGlobals: {
+    backgrounds: "light",
+    /**
+     * storybook-addon-data-theme-switcher configuration for Storybook.
+     */
     dataTheme: "rainforest",
     dataThemes: {
       list: [

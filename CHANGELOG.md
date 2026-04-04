@@ -6,6 +6,8 @@
 
 
 ## Previous Releases
+### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)
+### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)
 ### November 9, 2025: [v3.0.0](/.changelog/v3.0.0.mdx)
 ### November 5, 2025: [v3.0.0-next.0](/.changelog/v3.0.0-next.0.mdx)
 ### November 5, 2025: [v3.0.0-next.0](/.changelog/v3.0.0-next.0.mdx)

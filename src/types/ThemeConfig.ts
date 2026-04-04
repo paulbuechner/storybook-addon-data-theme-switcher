@@ -1,3 +1,4 @@
+// @ts-ignore generated as part of "prebuild" script
 import type { IconName } from "@/generated/types";
 
 import type { Theme } from "./Theme";
