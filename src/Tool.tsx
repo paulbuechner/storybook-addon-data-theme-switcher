@@ -129,10 +129,7 @@ export const DataThemeSelector = () => {
 
   const ThemeConfigIcon = useMemo(
     () =>
-      Icon[
-        // eslint-disable-next-line import/namespace
-        iconKey as keyof typeof Icon
-      ] as never as ElementType,
+      Icon[iconKey as keyof typeof Icon] as never as ElementType,
     [iconKey]
   );
 

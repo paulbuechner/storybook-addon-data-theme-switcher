@@ -26,16 +26,10 @@ const config = [
       "react-hooks": pluginReactHooks,
     },
     settings: {
-      react: { version: "detect" }, // Automatically detect React version
+      react: { version: "detect" },
 
       "import/resolver": {
-        node: {
-          extensions: [".ts", ".tsx"],
-        },
-        alias: {
-          map: [["@", "./src"]], // Map @/ to ./src
-          extensions: [".ts", ".tsx"],
-        },
+        typescript: true,
       },
     },
     rules: {
