@@ -56,7 +56,8 @@
     "release": "changeset publish",
     "start": "run-p build:watch \"storybook --quiet\"",
     "storybook": "storybook dev -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
     "version": "changeset version"
   },
   "dependencies": {
@@ -71,7 +72,9 @@
     "@commitlint/config-conventional": "^20.5.0",
     "@eslint/js": "^10.0.1",
     "@octokit/rest": "^22.0.1",
+    "@playwright/test": "^1.59.1",
     "@storybook/addon-docs": "^10.3.4",
+    "@storybook/addon-vitest": "^10.3.4",
     "@storybook/react-vite": "^10.3.4",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/edit-json-file": "^1.7.4",
@@ -79,6 +82,8 @@
     "@types/node": "^20.19.39",
     "@types/react": "^19.2.14",
     "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/browser-playwright": "^4.1.2",
+    "@vitest/coverage-v8": "^4.1.2",
     "edit-json-file": "^1.8.1",
     "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",
@@ -91,6 +96,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "npm-run-all2": "^8.0.4",
+    "playwright": "^1.59.1",
     "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "prettier-plugin-packagejson": "^3.0.2",
@@ -105,7 +111,8 @@
     "tsx": "^4.21.0",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.58.0",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "vitest": "^4.1.2"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
