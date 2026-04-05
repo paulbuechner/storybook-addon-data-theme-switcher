@@ -1,5 +1,12 @@
 [
   {
+    "id": 439,
+    "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/439",
+    "body": "---\ntitle: Version 3.2.0\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 3.2.0. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/439\nreleaseDate: April 5, 2026\nversion: 3.2.0\n---\n\n\n\n## storybook-addon-data-theme-switcher@3.2.0\n\n### Minor Changes\n\n-   [`c7e0413`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/c7e0413a3653e08a2751e23e446272eb5a6aa926) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Toolbar button now reflects external `data-theme` attribute changes. If another script, addon, or DevTools modifies the `data-theme` attribute on the `<html>` element, the toolbar button automatically updates to show the current value.\n",
+    "date": "April 5, 2026",
+    "version": "3.2.0"
+  },
+  {
     "id": 438,
     "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/438",
     "body": "---\ntitle: Version 3.1.1\ndescription: Explore the changelog for storybook-addon-data-theme-switcher version 3.1.1. Learn about the latest features, bug fixes, and improvements.\nreleaseUrl: https://github.com/paulbuechner/storybook-addon-data-theme-switcher/pull/438\nreleaseDate: April 4, 2026\nversion: 3.1.1\n---\n\n\n\n## storybook-addon-data-theme-switcher@3.1.1\n\n### Patch Changes\n\n-   [`4211c88`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/4211c8837bc9a589622cb935fb92a78e17142e37) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Fix initial `dataTheme` from `initialGlobals` not applying the `data-theme` attribute on load. The addon's preset no longer overrides the user's `initialGlobals` value, and the decorator now handles an undefined `dataTheme` gracefully.\n",

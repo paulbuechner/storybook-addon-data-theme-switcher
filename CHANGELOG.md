@@ -1,51 +1,28 @@
 # Changelog
 
-## 3.2.0
-
-### Minor Changes
-
-- [`c7e0413`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/commit/c7e0413a3653e08a2751e23e446272eb5a6aa926) Thanks [@paulbuechner](https://github.com/paulbuechner)! - Toolbar button now reflects external `data-theme` attribute changes. If another script, addon, or DevTools modifies the `data-theme` attribute on the `<html>` element, the toolbar button automatically updates to show the current value.
 
 ## Latest Release
+### April 5, 2026: [v3.2.0](/.changelog/v3.2.0.mdx)
 
-### April 4, 2026: [v3.1.1](/.changelog/v3.1.1.mdx)
 
 ## Previous Releases
-
+### April 4, 2026: [v3.1.1](/.changelog/v3.1.1.mdx)
 ### April 4, 2026: [v3.1.0](/.changelog/v3.1.0.mdx)
-
 ### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)
-
 ### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)
-
 ### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)
-
 ### November 9, 2025: [v3.0.0](/.changelog/v3.0.0.mdx)
-
 ### November 5, 2025: [v3.0.0-next.0](/.changelog/v3.0.0-next.0.mdx)
-
 ### November 5, 2025: [v3.0.0-next.0](/.changelog/v3.0.0-next.0.mdx)
-
 ### November 5, 2025: [v2.0.2](/.changelog/v2.0.2.mdx)
-
 ### November 5, 2025: [v2.0.1](/.changelog/v2.0.1.mdx)
-
 ### June 7, 2025: [v2.0.0-next.0](/.changelog/v2.0.0-next.0.mdx)
-
 ### June 7, 2025: [v2.0.0-next.0](/.changelog/v2.0.0-next.0.mdx)
-
 ### March 2, 2025: [v1.0.1](/.changelog/v1.0.1.mdx)
-
 ### December 30, 2024: [v1.0.0](/.changelog/v1.0.0.mdx)
-
 ### March 20, 2024: [v0.4.2](/.changelog/v0.4.2.mdx)
-
 ### March 19, 2024: [v0.4.1](/.changelog/v0.4.1.mdx)
-
 ### March 19, 2024: [v0.4.0](/.changelog/v0.4.0.mdx)
-
 ### January 28, 2024: [v0.2.0](/.changelog/v0.2.0.mdx)
-
 ### January 28, 2024: [v0.2.0](/.changelog/v0.2.0.mdx)
-
 ### April 15, 2023: [v0.1.7](/.changelog/v0.1.7.mdx)
