@@ -45,7 +45,8 @@
         --primary-900: #272173;
     }
 
-    [data-theme='base'] {
+    [data-theme='base'],
+    [data-color-scheme='base'] {
         --primary-50: #eef2ff;
         --primary-100: #e0e7ff;
         --primary-200: #d0d7f7;
@@ -58,7 +59,8 @@
         --primary-900: #272173;
     }
 
-    [data-theme='rainforest'] {
+    [data-theme='rainforest'],
+    [data-color-scheme='rainforest'] {
         --primary-50: #ecfdf4;
         --primary-100: #c9f2de;
         --primary-200: #9de9c6;
@@ -71,7 +73,8 @@
         --primary-900: #003422;
     }
 
-    [data-theme='candy'] {
+    [data-theme='candy'],
+    [data-color-scheme='candy'] {
         --primary-50: #fdf2f8;
         --primary-100: #f7e2ee;
         --primary-200: #f8cce5;
@@ -84,7 +87,8 @@
         --primary-900: #590028;
     }
 
-    [data-theme='rose'] {
+    [data-theme='rose'],
+    [data-color-scheme='rose'] {
         --primary-50: #fff1f2;
         --primary-100: #ffe4e6;
         --primary-200: #fecdd3;
