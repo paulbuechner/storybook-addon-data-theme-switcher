@@ -134,6 +134,44 @@ test.describe("Data Theme Switcher Addon", () => {
     await expect(dropdown(page)).not.toBeVisible();
   });
 
+  test("toolbar updates when data-theme is changed externally", async ({
+    page,
+  }) => {
+    // Arrange
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+
+    // Assert — starts with "rainforest" (set by beforeEach)
+    await expect(addonButton(page)).toContainText("Rainforest");
+
+    // Act — externally change data-theme inside the preview iframe
+    await iframe.locator("html").evaluate((el) => {
+      el.setAttribute("data-theme", "candy");
+    });
+
+    // Assert — toolbar button reflects the external change
+    await expect(addonButton(page)).toContainText("Candy");
+    await expect(iframe.locator("html")).toHaveAttribute("data-theme", "candy");
+  });
+
+  test("toolbar updates when data-theme is removed externally", async ({
+    page,
+  }) => {
+    // Arrange
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+
+    // Assert — starts with "rainforest" (set by beforeEach)
+    await expect(addonButton(page)).toContainText("Rainforest");
+
+    // Act — externally remove data-theme inside the preview iframe
+    await iframe.locator("html").evaluate((el) => {
+      el.removeAttribute("data-theme");
+    });
+
+    // Assert — toolbar button no longer shows a theme name
+    await expect(addonButton(page)).toHaveText("");
+    await expect(iframe.locator("html")).not.toHaveAttribute("data-theme");
+  });
+
   test("dropdown closes after selecting a theme", async ({ page }) => {
     // Act
     await selectTheme(page, "Candy");
