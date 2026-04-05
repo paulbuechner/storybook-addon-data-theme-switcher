@@ -15,7 +15,7 @@
     "tailwindcss",
     "daisyUI"
   ],
-  "homepage": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher",
+  "homepage": "https://paulbuechner.github.io/storybook-addon-data-theme-switcher",
   "repository": {
     "type": "git",
     "url": "https://github.com/paulbuechner/storybook-addon-data-theme-switcher"
