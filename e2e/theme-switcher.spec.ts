@@ -201,3 +201,153 @@ test.describe("Data Theme Switcher Addon", () => {
     await expect(button).toHaveCSS("background-color", "rgb(107, 112, 252)");
   });
 });
+
+test.describe("Custom data attribute (data-color-scheme)", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(
+      "/?path=/story/stories-button--custom-data-attribute&globals=dataTheme:rainforest"
+    );
+    await page
+      .frameLocator("#storybook-preview-iframe")
+      .locator(".sb-show-main")
+      .waitFor();
+
+    await selectTheme(page, "Rainforest");
+  });
+
+  test("uses the configured attribute instead of data-theme", async ({
+    page,
+  }) => {
+    // Arrange
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+
+    // Assert
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-color-scheme",
+      "rainforest"
+    );
+    await expect(iframe.locator("html")).not.toHaveAttribute("data-theme");
+    await expect(addonButton(page)).toContainText("Rainforest");
+  });
+
+  test("toolbar button is visible and shows active theme name", async ({
+    page,
+  }) => {
+    // Assert
+    await expect(addonButton(page)).toBeVisible();
+    await expect(addonButton(page)).toContainText("Rainforest");
+  });
+
+  test("clicking the toolbar button opens the theme dropdown", async ({
+    page,
+  }) => {
+    // Act
+    await addonButton(page).click();
+
+    // Assert
+    const dd = dropdown(page);
+    await expect(dd.getByText("Clear data-theme")).toBeVisible();
+    await expect(dd.getByText("Rainforest")).toBeVisible();
+    await expect(dd.getByText("Candy")).toBeVisible();
+    await expect(dd.getByText("Rose")).toBeVisible();
+  });
+
+  test("selecting a theme updates the preview iframe", async ({ page }) => {
+    // Arrange
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+
+    // Assert — initial theme from story globals
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-color-scheme",
+      "rainforest"
+    );
+
+    // Act — switch to "Candy"
+    await selectTheme(page, "Candy");
+
+    // Assert — custom attribute updated, data-theme not used
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-color-scheme",
+      "candy"
+    );
+    await expect(iframe.locator("html")).not.toHaveAttribute("data-theme");
+    await expect(addonButton(page)).toContainText("Candy");
+  });
+
+  test("full theme lifecycle: switch themes then clear", async ({ page }) => {
+    // Arrange
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+
+    // Assert — starts with "rainforest"
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-color-scheme",
+      "rainforest"
+    );
+
+    // Act — switch to "Candy"
+    await selectTheme(page, "Candy");
+
+    // Assert
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-color-scheme",
+      "candy"
+    );
+
+    // Act — switch to "Rose"
+    await selectTheme(page, "Rose");
+
+    // Assert
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-color-scheme",
+      "rose"
+    );
+
+    // Act — clear the theme
+    await addonButton(page).click();
+    await dropdown(page).getByText("Clear data-theme").click();
+
+    // Assert — attribute removed
+    await expect(iframe.locator("html")).not.toHaveAttribute(
+      "data-color-scheme"
+    );
+  });
+
+  test("toolbar updates when custom attribute is changed externally", async ({
+    page,
+  }) => {
+    // Arrange
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+    await expect(addonButton(page)).toContainText("Rainforest");
+
+    // Act — externally change data-color-scheme inside the preview iframe
+    await iframe.locator("html").evaluate((el) => {
+      el.setAttribute("data-color-scheme", "candy");
+    });
+
+    // Assert — toolbar button reflects the external change
+    await expect(addonButton(page)).toContainText("Candy");
+    await expect(iframe.locator("html")).toHaveAttribute(
+      "data-color-scheme",
+      "candy"
+    );
+  });
+
+  test("toolbar updates when custom attribute is removed externally", async ({
+    page,
+  }) => {
+    // Arrange
+    const iframe = page.frameLocator("#storybook-preview-iframe");
+    await expect(addonButton(page)).toContainText("Rainforest");
+
+    // Act — externally remove data-color-scheme inside the preview iframe
+    await iframe.locator("html").evaluate((el) => {
+      el.removeAttribute("data-color-scheme");
+    });
+
+    // Assert — toolbar button no longer shows a theme name
+    await expect(addonButton(page)).toHaveText("");
+    await expect(iframe.locator("html")).not.toHaveAttribute(
+      "data-color-scheme"
+    );
+  });
+});
