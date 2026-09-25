@@ -2,10 +2,12 @@
 
 
 ## Latest Release
-### April 4, 2026: [v3.1.0](/.changelog/v3.1.0.mdx)
+### April 5, 2026: [v3.2.0](/.changelog/v3.2.0.mdx)
 
 
 ## Previous Releases
+### April 4, 2026: [v3.1.1](/.changelog/v3.1.1.mdx)
+### April 4, 2026: [v3.1.0](/.changelog/v3.1.0.mdx)
 ### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)
 ### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)
 ### November 20, 2025: [v3.0.1](/.changelog/v3.0.1.mdx)

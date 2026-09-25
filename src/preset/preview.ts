@@ -19,9 +19,6 @@ import { withGlobals } from "@/withGlobals";
 
 const preview: ProjectAnnotations<Renderer> = {
   decorators: [withGlobals],
-  initialGlobals: {
-    dataTheme: "none",
-  },
 };
 
 export default preview;

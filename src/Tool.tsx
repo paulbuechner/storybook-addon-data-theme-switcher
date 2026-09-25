@@ -56,7 +56,6 @@ const ThemeMenu = ({
 );
 
 export const DataThemeSelector = () => {
-  const [selected, setSelected] = useState<string | undefined>(undefined);
   const [isOpen, setIsOpen] = useState(false);
 
   const [{ dataTheme, dataThemes: themes }, updateThemeGlobals] =
@@ -69,8 +68,6 @@ export const DataThemeSelector = () => {
 
   const change = useCallback(
     (newSelected: string) => {
-      setSelected(newSelected);
-
       const { list, onChange } = getConfig(themeConfig);
       const selectedTheme = getSelectedTheme(list, newSelected);
       updateThemeGlobals({
@@ -86,11 +83,7 @@ export const DataThemeSelector = () => {
 
   const { items, selectedTheme } = useMemo(() => {
     const { clearable, list, default: defaultTheme } = getConfig(themeConfig);
-    const selectedThemeName = getSelectedThemeName(
-      list,
-      defaultTheme,
-      selected
-    );
+    const selectedThemeName = getSelectedThemeName(list, defaultTheme);
 
     const selectorItems: ThemeSelectorItem[] = [];
 
@@ -123,7 +116,7 @@ export const DataThemeSelector = () => {
       items: selectorItems,
       selectedTheme: getSelectedTheme(list, selectedThemeName),
     };
-  }, [themeConfig, selected, change]);
+  }, [themeConfig, change]);
 
   const iconKey = themeConfig.toolbar?.icon ?? "PaintBrushIcon";
 
