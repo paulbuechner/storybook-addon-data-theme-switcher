@@ -23,6 +23,26 @@ async function selectTheme(page: Page, themeName: string) {
   await dropdown(page).getByText(themeName, { exact: true }).click();
 }
 
+/**
+ * Wait until the story render finished. The decorator attaches its
+ * MutationObserver on STORY_RENDERED, which `.sb-show-main` precedes.
+ */
+async function waitForRenderFinished(page: Page) {
+  const html = page.frameLocator("#storybook-preview-iframe").locator("html");
+  await expect
+    .poll(() =>
+      html.evaluate(
+        () =>
+          (
+            window as {
+              __STORYBOOK_PREVIEW__?: { currentRender?: { phase?: string } };
+            }
+          ).__STORYBOOK_PREVIEW__?.currentRender?.phase
+      )
+    )
+    .toBe("finished");
+}
+
 test.describe("Data Theme Switcher Addon", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
@@ -33,7 +53,7 @@ test.describe("Data Theme Switcher Addon", () => {
       .locator(".sb-show-main")
       .waitFor();
 
-    await selectTheme(page, "Rainforest");
+    await waitForRenderFinished(page);
   });
 
   test("initial dataTheme from initialGlobals is applied on load", async ({
@@ -212,7 +232,7 @@ test.describe("Custom data attribute (data-color-scheme)", () => {
       .locator(".sb-show-main")
       .waitFor();
 
-    await selectTheme(page, "Rainforest");
+    await waitForRenderFinished(page);
   });
 
   test("uses the configured attribute instead of data-theme", async ({
