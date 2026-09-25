@@ -1,0 +1,5 @@
+# pnpm 11 fails the install on unreviewed dependency build scripts (ERR_PNPM_IGNORED_BUILDS).
+# Both packages work without their postinstall, which pnpm 10 skipped as well.
+allowBuilds:
+  esbuild: false
+  unrs-resolver: false
