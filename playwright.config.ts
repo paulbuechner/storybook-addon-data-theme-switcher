@@ -9,7 +9,10 @@ export default defineConfig({
     headless: true,
   },
   webServer: {
-    command: "pnpm build && pnpm storybook --ci",
+    // Start storybook directly: without a terminal (CI), pnpm runs scripts in
+    // their own process group, which survives the webServer's SIGKILL and keeps
+    // Playwright waiting for its output to close.
+    command: "pnpm build && storybook dev -p 6006 --ci",
     url: "http://localhost:6006",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
