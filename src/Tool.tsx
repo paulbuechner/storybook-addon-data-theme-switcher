@@ -7,7 +7,8 @@ import {
   ToggleButton,
 } from "storybook/internal/components";
 import { styled } from "storybook/theming";
-import * as Icon from "@storybook/icons";
+import * as Icons from "@storybook/icons";
+import { PaintBrushIcon, UndoIcon } from "@storybook/icons";
 
 import { DATA_THEME_KEY, TOOL_ID } from "@/constants";
 import { getConfig, getSelectedTheme, getSelectedThemeName } from "@/utils";
@@ -93,7 +94,7 @@ export const DataThemeSelector = () => {
         title: "Clear data-theme",
         onClick: () => change("none"),
         value: "none",
-        left: <Icon.UndoIcon />,
+        left: <UndoIcon />,
         active: false,
       });
     }
@@ -118,10 +119,15 @@ export const DataThemeSelector = () => {
     };
   }, [themeConfig, change]);
 
-  const iconKey = themeConfig.toolbar?.icon ?? "PaintBrushIcon";
+  const iconKey = themeConfig.toolbar?.icon;
 
+  // The manager renders the icon set bundled with Storybook, which can lack
+  // icons from the @storybook/icons version `IconName` was generated from.
   const ThemeConfigIcon = useMemo(
-    () => Icon[iconKey as keyof typeof Icon] as never as ElementType,
+    () =>
+      (iconKey &&
+        (Icons[iconKey as keyof typeof Icons] as ElementType | undefined)) ||
+      PaintBrushIcon,
     [iconKey]
   );
 

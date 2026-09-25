@@ -36,8 +36,10 @@ This comes in handy if you want to test your components with different themes.
 
 ## Compatibility
 
-This addon is compatible with storybook version `^10.x.x`.
+This addon is compatible with storybook version `^10.1.0` and `^11.x.x`.
 
+- For storybook version `10.0.x` use
+  [`storybook-addon-data-theme-switcher@3.0.1`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/releases/tag/v3.0.1)
 - For storybook version `>=8.3.x <10.x.x` use
   [`storybook-addon-data-theme-switcher@2.0.2`](https://github.com/paulbuechner/storybook-addon-data-theme-switcher/tree/926bab8fb3f1994400624abce909ab1f78d1677c)
 - For storybook version `<8.3.x` use
@@ -51,17 +53,38 @@ npm install storybook-addon-data-theme-switcher --save-dev
 
 ## Getting Started
 
-Then activate the addon by adding it to the storybook `main.js` file
-(located in the Storybook config directory):
+Then activate the addon by adding it to `.storybook/main.ts`:
 
-```javascript
-module.exports = {
+```typescript
+// Replace your-framework with the framework you are using (e.g., react-vite)
+import { defineMain } from "@storybook/your-framework/node";
+
+export default defineMain({
   addons: [
     // other addons here
     "storybook-addon-data-theme-switcher",
   ],
-};
+});
 ```
+
+### CSF Next
+
+> **Note:** With CSF Next (`definePreview`, the default for new Storybook 11
+> projects) the addon must also be registered in `.storybook/preview.ts`.
+> Otherwise the toolbar shows up, but the `data-theme` attribute is never
+> applied.
+
+```typescript
+import { definePreview } from "@storybook/your-framework";
+import dataThemeSwitcher from "storybook-addon-data-theme-switcher";
+
+export default definePreview({
+  addons: [dataThemeSwitcher()],
+  // ...initialGlobals, see Configuration
+});
+```
+
+This also type-checks the `dataTheme` and `dataThemes` globals in your stories.
 
 ## Configuration
 

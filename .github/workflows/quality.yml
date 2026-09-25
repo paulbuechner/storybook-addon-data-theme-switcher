@@ -41,11 +41,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint
-        run: pnpm lint
-
       - name: Build addon
         run: pnpm build
+
+      - name: Lint
+        run: pnpm lint
 
       - name: Install Playwright Chromium
         run: pnpm exec playwright install chromium --with-deps

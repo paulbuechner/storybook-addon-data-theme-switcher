@@ -2,14 +2,15 @@
 
 ## Project overview
 
-Storybook addon that adds a toolbar button to switch the `data-theme` attribute on the `<html>` element. Targets Storybook 10+ with React.
+Storybook addon that adds a toolbar button to switch the `data-theme` attribute on the `<html>` element. Supports Storybook 10.1+ and 11 with React.
 
 ## Tech stack
 
-- **Runtime:** Storybook 10, React 19
-- **Language:** TypeScript 6
+- **Runtime:** Storybook 10 and 11 (dev deps track the 11 prerelease), React 19
+- **Language:** TypeScript 6 (hold: Storybook 11 and typescript-eslint don't support 7)
 - **Bundler:** tsdown
-- **Package manager:** pnpm
+- **Package manager:** pnpm 12; dependency build scripts need an `allowBuilds` entry in `pnpm-workspace.yaml`
+- **Linting:** ESLint 9 (hold: `eslint-plugin-react` crashes on ESLint 10)
 - **Testing:** Vitest (portable stories via `@storybook/addon-vitest`) + Playwright (e2e)
 
 ## Architecture
@@ -45,6 +46,10 @@ The `withGlobals` decorator applies `data-theme` **synchronously during render**
 
 - Eliminates flash of unstyled content on initial load.
 
+### CSF Next
+
+`.storybook/preview.ts` uses `definePreview` and registers the built addon from `../dist/index.js`, so build before running Storybook, tests or lint. Under CSF Next Storybook ignores preset `previewAnnotations` (including `.storybook/local-preset.ts`); only `definePreview({ addons })` applies the decorator.
+
 ## Build
 
 ```sh
@@ -61,7 +66,7 @@ pnpm test         # vitest (portable story tests in browser via Playwright)
 pnpm test:e2e     # playwright e2e tests against running Storybook
 ```
 
-- **Vitest tests** (`src/stories/Button.stories.ts`): Test that `data-theme` attribute and CSS variables apply correctly via the decorator.
+- **Vitest tests** (`src/stories/Button.stories.ts`): Smoke-render each story with the addon's decorator applied.
 - **Playwright e2e tests** (`e2e/theme-switcher.spec.ts`): Test the full toolbar UI interaction - clicking the button, selecting themes, verifying the preview iframe updates.
 
 ### E2e test selectors

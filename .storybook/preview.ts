@@ -1,10 +1,14 @@
-import type { Preview } from "@storybook/react-vite";
+import { definePreview } from "@storybook/react-vite";
+import addonDocs from "@storybook/addon-docs";
 
 import type { ThemeConfig } from "@/preset/types";
 
+import dataThemeSwitcher from "../dist/index.js";
+
 import "../src/styles/globals.css";
 
-const preview = {
+export default definePreview({
+  addons: [addonDocs(), dataThemeSwitcher()],
   parameters: {
     controls: {
       matchers: {
@@ -39,6 +43,4 @@ const preview = {
       },
     } satisfies ThemeConfig,
   },
-} satisfies Preview;
-
-export default preview;
+});

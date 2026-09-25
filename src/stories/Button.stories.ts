@@ -1,21 +1,18 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-
 import { Button } from "./Button";
 
-const meta = {
+import preview from "../../.storybook/preview";
+
+const meta = preview.meta({
   component: Button,
-} satisfies Meta<typeof Button>;
+});
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const DataThemeSwitcher: Story = {
+export const DataThemeSwitcher = meta.story({
   args: {
     label: "Themed Button",
   },
-};
+});
 
-export const CustomDataAttribute: Story = {
+export const CustomDataAttribute = meta.story({
   args: {
     label: "Themed Button",
   },
@@ -34,4 +31,4 @@ export const CustomDataAttribute: Story = {
       },
     },
   },
-};
+});
