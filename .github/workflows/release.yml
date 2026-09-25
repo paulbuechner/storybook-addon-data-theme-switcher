@@ -71,8 +71,10 @@ jobs:
           publish-script: pnpm release
           commit-message: "ci(changesets): version packages"
 
+      # The changelog script reads main's latest release PR, so on next it
+      # would re-add that entry as a duplicate.
       - name: Update changelog
-        if: steps.changesets.outputs.published == 'true'
+        if: steps.changesets.outputs.published == 'true' && github.ref == 'refs/heads/main'
         run: |
           pnpm changelog:latest
           pnpm changelog:format
